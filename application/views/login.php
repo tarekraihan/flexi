@@ -13,7 +13,7 @@
 	<meta name="keywords" content="" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<title>Noor Flexi biling :: Noor Flexi Ultimate recharge solution</title>
-	<link href="../easybilling.ws/img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
+	<link href="<?php echo base_url();?>resource/login//img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
 	<link href="<?php echo base_url();?>resource/login/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>resource/login/css/login.css" rel="stylesheet" type="text/css">
 </head>

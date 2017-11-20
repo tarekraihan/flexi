@@ -8,10 +8,10 @@
 	<meta name="rating" content="general" />
 	<meta name="distribution" content="global" />
 	<meta name="robots" content="index, follow">
-	<<meta name="description" content="" />
+	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<title>Noor Flexi biling :: Noor Flexi Ultimate recharge solution</title>
-	<link href="../easybilling.ws/img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
+	<link href="<?php echo base_url();?>resource/login/img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
 	<link href="<?php echo base_url();?>resource/login/css/login_5.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>resource/login/css/button.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url();?>resource/login/css/common.css" rel="stylesheet" type="text/css" />

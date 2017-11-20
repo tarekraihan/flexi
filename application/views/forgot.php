@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<base />
 	<meta charset="utf-8">
 	<meta name="author" content="DhakaSoft Network">
 	<meta name="copyright" content="Copyright &copy; 2009 dhaka-soft.net" />
@@ -11,7 +10,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<title>Noor Flexi biling :: Noor Flexi Ultimate recharge solution</title>
-	<link href="../easybilling.ws/img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
+	<link href="<?php echo base_url();?>resource/login/img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
 	<link href="<?php echo base_url();?>resource/login/css/login_5.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>resource/login/css/common.css" rel="stylesheet" type="text/css" />
 	<!--[if IE 6]>  

@@ -1,0 +1,88 @@
+button{
+height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#CACACA;
+}
+
+.formSubmit, .formSubmit:active, .formSubmit:focus{
+height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#0072C6;
+color:#fff;
+font-weight:bold;
+line-height:25px;
+}
+
+.filterSubmit, .filterSubmit:active, .filterSubmit:focus{
+height: 24px !important;
+padding:2px 4px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#DA4A38;
+color:#fff;
+font-weight:bold;
+line-height: 16px;
+}
+
+
+
+button.bluebtn{
+background:#0072C6;
+}
+
+button.bluebtn:hover{
+background:#1E82CC;
+}
+
+button.redbtn{
+background:#DA4A38;
+}
+
+button.redbtn:hover{
+background:#CA3B2B;
+}
+
+button.greenbtn{
+background:#3A8F00;
+}
+
+button.greenbtn:hover{
+background:#388700;
+}
+
+button span.label{
+color:#fff;
+font-weight:bold;
+height:30px;
+line-height:30px;
+}
+
+#filtersdiv  button {height: 24px !important;padding:2px 4px;}
+#filtersdiv  button span.label {
+	line-height: 16px;
+	height: 16px;
+	}
+	
+.content h2 span  button {height: 24px !important;padding:2px 4px;}
+.content h2 span  button span.label {
+	line-height: 16px;
+	height: 16px;
+	}
+	
+a.goBack{
+height:30px;
+line-height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+float:left;
+text-align:center;
+color:#fff;
+font-weight:bold;
+background:#DA4A38;
+}

@@ -1,0 +1,197 @@
+body{margin:0px;padding:0px;background:#fff;font-family:"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";background:#fff url(../img/login_side.png) repeat-y left bottom;}
+input, textarea, select {outline:none;background:#fff;}
+#wrap {
+float: left;
+width: 100%;
+}
+
+
+#main {
+	margin-left: 250px;
+}	
+	
+#sidebar {
+float: left;
+width: 250px; /*Width of left column*/
+margin-left: -100%;
+background: #EFF3F6;
+}
+
+
+#footer {
+	padding:5px 0px;
+	background:#fff;
+	border-top:1px solid #ccc;
+	font-size:12px;
+	width:100%;
+	height:20px;
+	clear: left;
+	width: 100%;
+	position:fixed;
+	bottom:0px;
+}
+
+img{border:0px;}
+
+#header {
+	padding:5px 0px;
+	background:#0072C6;
+	height:100px;
+	float:left;
+	width:100%;
+}
+
+#header h2{width:100%;}
+#header h2 span.left{float:left;width:450px;font-size:32px;color:#fff;margin:10px 20px;}
+#header h2 span.right{float:right;width:450px;font-size:48px;font-weight:bold;color:#9C2400;margin:0px;}
+
+#login {
+	padding:0px 0px;
+	width:100%;
+	float:left;
+}
+
+#login table {width:220px;margin:8px 10px 10px 10px;	background:#EFF3F6;}
+
+#login table td{padding:0px 10px;}
+#login table td{padding-bottom:5px;}
+#login table td span{font-size:12px;color:#333;line-height:14px;height:14px;font-weight:bold;}
+
+#login input[type="text"],input[type="password"]{border:1px solid #989898;border-top:1px solid #989898;padding:3px 5px;color:#323232;margin:0px;min-height:18px;line-height:18px;background-color:#fff;outline:0;font-size:26px;opacity:0.9;
+filter:alpha(opacity=90);}
+
+#login input.login{width:190px;font-size:12px;font-weight:bold;}
+
+.logintable .errormsg{height:40px;padding: 0px 15px;}
+.logintable .base{
+	background: #F1F1F1;
+	padding: 5px 15px;
+	border-top: 1px solid #D2D2D2;
+	border-bottom: 1px solid #D2D2D2;
+	height:41px;
+		border-radius: 0 0 2px 2px ;
+	-webkit-border-radius:   0 0 2px 2px ;
+	-moz-border-radius:  0 0 2px 2px ;
+	}
+
+
+
+#sidebar h2{margin:0px 10px;font-size:16px;font-weight:normal;font-weight:bold;padding:5px 10px;margin-top:10px;}
+#sidebar p{margin:3px 10px;font-size:13px;font-weight:normal;font-weight:bold;padding:3px 10px;}
+#sidebar a{text-decoration:none;}
+#sidebar a:hover{text-decoration:underline;}
+#sidebar ul{margin:10px 0; list-style:none;}
+#sidebar ul li{padding:5px;font-size:12px;margin:0px;font-weight:bold;color:blue;}
+
+
+
+.header {border-bottom:1px solid #000}
+.content {height:100%}
+
+
+#footer p {
+	margin:0 15px;
+	font-size:12px;
+	color:#333;
+	height:20px;
+	line-height:20px;
+}
+#footer p span.left{float:left;width:20%}
+#footer p span.right{float:right;width:80%;text-align:right;}
+#footer p  a{color:blue;text-decoration:none;}
+#footer p  a:hover{text-decoration:underline;}
+#footer p  span.logds{width:728px;text-align:right;float:right;height:15px;}
+
+
+* html #footer {
+	height:1px;
+}
+
+button{
+height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#CACACA;
+}
+
+.formSubmit, .formSubmit:active, .formSubmit:focus{
+height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#0072C6;
+color:#fff;
+font-weight:bold;
+line-height:25px;
+}
+
+.filterSubmit, .filterSubmit:active, .filterSubmit:focus{
+height: 24px !important;
+padding:2px 4px;
+border:0px;
+cursor:pointer;
+width:90px;
+background:#DA4A38;
+color:#fff;
+font-weight:bold;
+line-height: 16px;
+}
+
+
+
+button.bluebtn{
+background:#0072C6;
+}
+
+button.bluebtn:hover{
+background:#1E82CC;
+}
+
+button.redbtn{
+background:#DA4A38;
+}
+
+button.redbtn:hover{
+background:#CA3B2B;
+}
+
+button.greenbtn{
+background:#3A8F00;
+}
+
+button.greenbtn:hover{
+background:#388700;
+}
+
+button span.label{
+color:#fff;
+font-weight:bold;
+height:30px;
+line-height:30px;
+}
+
+#filtersdiv  button {height: 24px !important;padding:2px 4px;}
+#filtersdiv  button span.label {
+	line-height: 16px;
+	height: 16px;
+	}
+	
+.content h2 span  button {height: 24px !important;padding:2px 4px;}
+.content h2 span  button span.label {
+	line-height: 16px;
+	height: 16px;
+	}
+	
+a.goBack{
+height:30px;
+line-height:30px;
+border:0px;
+cursor:pointer;
+width:90px;
+float:left;
+text-align:center;
+color:#fff;
+font-weight:bold;
+background:#DA4A38;
+}

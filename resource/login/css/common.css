@@ -1,0 +1,61 @@
+/*******************************
+	  NOTIFICATION STYLES
+*******************************/
+
+/** Common Styles **/
+
+p.notification{
+	display:block;
+	padding:7px 7px 7px 30px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	position:relative;
+	border:1px solid;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;  
+}
+
+	p.notification a.close{
+		position:absolute;
+		top:0px;
+		right:7px;
+	}
+	
+	/** ie7 hack **/
+	
+	*p.notification a.close{
+		top:7px;
+	}
+	
+/** Specific Notification Messages **/
+      
+.warning {
+	background: #fffbcc url('../img/error.png') 7px 8px no-repeat;
+	border-color: #E6DB55 !important;
+	color: #666452;
+}
+
+.information {
+	background: #dbe3ff url('../img/information.png') 7px 8px no-repeat;
+	border-color: #a2b4ee !important;
+	color: #585b66;
+}
+
+.success {
+	background: #d5ffce url('../img/tick.png') 7px 8px no-repeat;
+	border-color: #9adf8f !important;
+	color: #556652;
+}
+
+.error {
+	background:#FAE1E3 url('../img/exclamation.png') 7px 8px no-repeat;
+	border-color: red !important;
+	color: #665252;
+}
+
+.blank {
+	background:#FAE1E3 url('../img/blank.html') no-repeat right top;
+	border-color: red !important;
+	color: #665252;
+}

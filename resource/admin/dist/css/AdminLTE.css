@@ -5671,3 +5671,19 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+.ezttle {
+    margin: 0px;
+    padding: 0px;
+    background: #F1F1F1;
+    height: 40px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+}
+.ezttle span.text {
+    font-size: 13px;
+    font-weight: bold;
+    width: 40%;
+    float: left;
+    height: 40px;
+    line-height: 30px;
+}

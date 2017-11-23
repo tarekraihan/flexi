@@ -1,0 +1,1110 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size:12px;
+    /*background:#fff url(../img/mainbg.png) repeat-y left bottom;*/
+
+}
+body{
+    min-width:1076px;
+    overflow-x: scroll;
+}
+.main-header {min-width:1024px !important;}
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -31px;
+    padding: 0 0 30px;
+}
+
+#footer {
+    width:100%;
+    height: 31px;
+    background-color: #fff;
+    border-top:1px solid #DBDBDB;
+}
+
+#footer p{height:30px;line-height:30px;margin:0px 10px;font-size:11px;}
+
+.container{width:100%;}
+.mybody{padding-right: 0px;padding-left: 0px;}
+.clrGap{height:51px;}
+.top5{height:5px;}
+.top10{height:10px;}
+.top20{height:20px;}
+
+
+.head{
+    z-index:1200;
+    width:100%;
+    min-width:1024px;
+    background-color: #0072C6;
+    border-color: #005798;
+    border-radius:none;
+    height: 50px;
+}
+.main-header .logo{
+    /*width:50%;*/
+    float:left;
+}
+
+.main-header .logo a{
+    color: #fff;
+    font-weight: bold;
+    min-width: 230px;
+    padding: 15px 15px;
+    font-size: 18px;
+    height:50px;
+    line-height:50px;
+    text-decoration:none;
+}
+
+.main-header .logo:hover{text-decoration:none;color:#fff;}
+
+.head-right{
+    width:50%;
+    float:right;
+}
+
+
+.rsmenu{
+    text-align:right;
+    float:right;
+    list-style:none;
+    margin-right:12px;
+}
+
+.rsmenu li{
+    height:50px;
+    float:left;
+    line-height:50px;
+}
+
+.rsmenu li a.white{color:#fff;text-decoration:none;margin-left:15px;height:50px;
+    line-height:50px;}
+
+.ud{
+    margin: 0px;
+    float: left;
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom:10px;
+}
+
+/* navbar */
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+.navbar-default {
+    background-color: #3C8DBC;
+    border-color: #3C8DBC;
+    border-radius:none;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-weight:bold;
+    min-width: 230px;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #fff;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #005798;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #005798;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.nav  > li > a.padright{
+    padding-right:7px;
+}
+.nav  > li > a.padleft{
+    padding-left:7px;
+}
+
+
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #0072C6;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #fff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+    }
+}
+
+
+
+
+ul.ienav{
+    list-style:none;
+    margin:0px;
+    padding:0px;
+}
+
+ul.ienav{
+    float:left;
+}
+
+.main {padding-left:230px;}
+.sidebar {width:230px;float:left;}
+.mypage{padding:20px;}
+
+
+
+@media (max-width: 1000px) {
+    .pull-right {
+        float: left !important;
+        margin:0px;
+    }
+    p.pageinfo {
+        height:20px;
+        line-height:20px;
+        color:#666;
+    }
+}
+
+
+
+.ezttle{
+    margin:0px;
+    padding:0px;
+    background:#F1F1F1;
+    height:40px;
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+}
+
+.ezttle span.text{
+    font-size:13px;
+    font-weight:bold;
+    width:40%;
+    float:left;
+    height:40px;
+    line-height:30px;
+}
+
+.ezttle span.acton{
+    float:right;
+    text-align:right;
+}
+
+#filtersdiv
+{
+}
+#filtersdiv td{font-weight:bold;color:#666;}
+#filtersdiv td:first-child{padding-left:10px;}
+#filtersdiv tb.CellSpace{width:38px;}
+#filtersdiv select{font-size:11px;padding-right:2px;}
+#filtersdiv input{font-size:12px;}
+
+.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+    background-color: #fff;
+}
+
+.table-striped tbody > tr:nth-child(even) > td, .table-striped tbody > tr:nth-child(even) > th {
+    background-color: #eeeeee;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.table > tbody > tr > td > a{
+    font-weight:bold;
+    font-size:11px;
+}
+
+.table > tbody > tr > td{
+    padding:4px 4px;
+    border:none;
+    font-size:12px;
+    vertical-align: middle;
+}
+
+.table > thead > tr > th{
+    padding:2px 4px;
+    border:none;
+    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
+    font-size:11px;
+    background:#f1f1f1;
+    vertical-align: middle;
+}
+
+.table > thead > tr > th a{display:block;margin:0px;padding:0px;text-decoration:none;}
+
+.table > tfoot > tr > th{
+    padding:2px 4px;
+    border:none;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    font-size:11px;
+    background:#EBEBEB
+}
+
+.table > thead:first-child > tr:first-child > th {
+    border-top:1px solid #ddd;
+}
+
+.table > tfoot:first-child > tr:first-child > th {
+    border-top:1px solid #ddd;
+}
+
+
+.table > thead > tr > th.sort_asc {
+    background-color: #F1F1F1;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-image:url('../img/sortasc.png');
+    background-repeat:no-repeat;
+    background-position:95% 50%;
+
+}
+.table > thead > tr > th.sort_desc {
+    background-color: #F1F1F1;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-image:url('../img/sortdesc.png');
+    background-repeat:no-repeat;
+    background-position:95% 50%;
+}
+
+.pagination {
+    margin:10px 0;
+}
+
+.input-xs{
+    height: 22px;
+    padding: 1px 5px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.filter label {
+    font-weight: bold;
+    color:#666666;
+}
+
+p.pageinfo {
+    height:49px;
+    line-height:49px;
+    color:#666;
+    font-size:11px;
+}
+.summery{
+    width:350px;
+    margin:10px auto;
+}
+.summery p{padding:5px 2px;border-bottom:1px solid #ddd;color:#666;font-weight:bold}
+.summery table{width:100%;}
+.summery td{text-align:right;padding-right:10px;font-size:11px;}
+.summery td.amt{width:50%;text-align:left;font-weight:bold;}
+
+.fleft{float:left;}
+.fright{float:right;}
+.col-md-12{width:100%;}
+
+
+.inform {
+    background:#f1f1f1;
+    width:350px;
+    padding:15px 40px 25px 40px;
+}
+
+.inform p{padding:5px 2px;border-bottom:1px solid #ddd;color:#4B8DF8;font-weight:bold}
+
+p.form_error{
+    margin:0px;
+    padding:2px 0px;
+    font-size:10px;
+    color:#A94442;
+    border:none;
+    font-weight:normal;
+    margin-bottom:0px;
+}
+
+p.form_note{
+    margin:0px;
+    padding:2px 0px;
+    font-size:10px;
+    color:#999999;
+    border:none;
+    font-weight:normal;
+    margin-bottom:0px;
+}
+
+
+p.line{padding:0px;margin:0px;margin-bottom:8px;height:1px;line-height:1px;}
+
+.table > tbody > tr > td.action  > a{
+    color:red;font-weight:normal;font-size:11px;
+}
+
+table.rates{
+    width:600px;
+    font-size:11px;
+    border-bottom:1px solid #D0D0D0;
+}
+table.rates th{border:1px solid #D0D0D0;border-bottom:0px solid #D0D0D0;padding:4px 4px;background:#F1F1F1;}
+
+table.rates td input{border:0px;font-size:11px;padding:4px;background:#fff;}
+table.rates td select{border:0px;font-size:11px;padding:4px;background:#fff;width:100px;}
+table.rates td.last {border-right:1px solid #D0D0D0;}
+table.rates td.edit {width:100px;background:#fff;padding:0px;}
+table.rates td.select {width:80px;background:#fff;padding:0px;}
+table.rates td.enable {width:20px;background:#fff;padding:2px 4px;}
+
+table.rates td{
+    padding:0px 4px;
+    background:#F6F6F6;
+    border-left:1px solid #D0D0D0;
+    border-top:1px solid #EDEDED;
+}
+
+table.bulk td{
+    padding:0px 4px;
+    background: transparent;
+    font-size:12px;
+    border-left:1px solid #D0D0D0;
+    border-top:1px solid #EDEDED;
+}
+
+table.table10{
+    width:100%;
+    border:1px solid #ccc;
+}
+
+table.table10 thead th{
+    background:#E9ECF1 url(../img/th.png) repeat-x left top;
+    height:26px;
+    border-right:0px solid #CFCFCF;
+    border-left:0px solid #FFFFFF;
+    padding:0px 5px;
+    text-align:left;
+    font-size:11px;
+}
+
+table.table10 tbody td{
+    border-top:1px solid #EBEBEB;
+    height:24px;
+    padding:0px 5px;
+    border-right:0px solid #CFCFCF;
+    border-left:0px solid #FFFFFF;
+    font-size:11px;
+}
+
+tr.rowa{background:#fff;}
+tr.rowb{background:#f3f3f3;}
+tr.error{background:#f2dede;}
+tr.error td{border-bottom:1px solid #EBCCD1;}
+p.pinfo{border:none;font-size:14px;margin:0px;padding:3px 0px;color:#333;}
+p.pinfo span{font-size:16px;}
+p.last{padding-bottom:10px;}
+
+.report{width:550px;}
+.report h4{text-align:center;padding:5px;margin:0px;margin-top:10px;}
+.report p{text-align:center;padding:3px;margin:0px;}
+.report table{width:100%;margin-top:10px;}
+.report table th{padding:2px 5px;border-bottom:1px solid #f1f1f1;border-right:1px solid #f1f1f1;border-top:1px solid #f1f1f1;}
+.report table th.left{border-left:1px solid #f1f1f1;}
+.report table td.left{border-left:1px solid #f1f1f1;}
+.report table td{padding:2px 5px;border-bottom:1px solid #f1f1f1;border-right:1px solid #f1f1f1;border-top:1px solid #f1f1f1;}
+.report table td.left{border-left:1px solid #f1f1f1;}
+.report table td.amt{text-align:right;width:100px;}
+.report table th.amt{text-align:right;width:100px;}
+
+.balnce table{width:100%;margin-top:10px;}
+.balnce table td{padding:5px;}
+.balnce table th{padding:5px;border-bottom:1px solid #f1f1f1;border-right:1px solid #f1f1f1;border-top:1px solid #f1f1f1;}
+.balnce table th.left{border-left:1px solid #f1f1f1;}
+.balnce table td.left{border-left:1px solid #f1f1f1;}
+.balnce table td{border-bottom:1px solid #f1f1f1;border-right:1px solid #f1f1f1;border-top:1px solid #f1f1f1;}
+.balnce table td.left{border-left:1px solid #f1f1f1;}
+.balnce table td.amt{text-align:right;}
+.balnce table th.amt{text-align:right;}
+
+.ticket h2{margin:0px;font-size:22px;}
+.ticket h4{margin:0px;font-size:14px;font-weight:bold;color:#666666;}
+.ticket p{margin:10px 0;font-size:12px;margin-bottom:2px;}
+
+.usage{width:290px;border:1px solid #E5E5E5;margin:10px;min-height:355px;float:left;}
+.usage table{padding:10px 0px;width:256px;margin:0px 17px;}
+.usage .table{min-height:261px;}
+.usage td{padding:7px 0px;font-size:14px;color:#898F9C;border-bottom:1px solid #E5E5E5;}
+.usage td.tk{text-align:right;color:#333333;font-weight:bold;font-size:12px;}
+.usage h2{color:white;background-color:#3c8dbc;border-bottom:1px solid #E5E5E5;height:46px;line-height:46px;margin:0px;padding:0px 17px; font-weight:bold;font-size:16px;color:#333333;}
+.usage h3{background-color:#FAFBFB;border-top:1px solid #E5E5E5;height:46px;line-height:46px;margin:0px;padding:0px 17px; font-weight:normal;font-size:14px;color:#333333;}
+.usage h3 span.left{float:left;width:150px;text-align:left;font-weight:normal;font-size:14px;color:#333333;}
+.usage h3 span.right{float:right;width:100px;text-align:right;color:#333333;font-weight:bold;font-size:15px;}
+.right10{margin-right:10px;font-weight:bold;font-size:11px;}
+.right10:hover{background-color: #005798;}
+.right10:focus{background-color: #005798;}
+
+.count
+{
+    border-color:rgb(226, 57, 35) rgb(216, 55, 34) rgb(192, 49, 30);
+    border-width:1px;
+    border-style:solid;
+    border-radius:2px 2px 2px 2px;
+    box-shadow:0px 1px 0px rgba(0, 39, 121, 0.77);
+    position:absolute;
+    z-index:10;
+    right:-5px;
+    background:red;
+    color:#fff;
+    padding:0px 2px 1px 2px;
+    top:2px;
+    font-weight:bold;
+    height:16px;
+    line-height:16px;
+}
+
+.printhead{margin:0px;text-align:center;margin-top:10px;font-weight:bold;color:#0072C6;}
+.onprint{display: none;}
+
+@media print
+{
+    .sidebar,.ezttle, .form-inline, #footer
+    {
+        display: none !important;
+    }
+    .onprint { display: block !important; }
+
+    .report {margin:0px;}
+}
+
+.count2{
+    font-weight:bold;
+    float:right;
+    color:#fff;
+    background:#009D00;
+    border-radius:2px 2px 2px 2px;
+    height:16px;
+    line-height:16px;
+    padding:0px 2px;
+    margin-top:3px;
+}
+
+.box {background:#2D2D2D url(../img/live.png) no-repeat left center;width:250px;float:left;margin:10px;padding:10px;padding-left:22px;-webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;margin-left:0px;}
+.box:first-child{margin-left:0px;}
+.box span.lft{height:20px;line-height:20px;float:left;text-align:left;font-size:14px;font-weight:bold;color:#fff;}
+.box span.rht{height:20px;line-height:20px;float:right;text-align:right;font-size:16px;font-weight:bold;color:#99CC00;}
+
+
+ul.shortcurt{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    width:100%;
+}
+
+ul.shortcurt li{
+    float:left;
+    border:1px solid #E5E5E5;
+    margin-right:20px;
+    margin-bottom:20px;
+    background:#FAFBFB;
+    cursor:pointer;
+}
+
+ul.shortcurt li a{display:block;color:#898F9C;text-decoration:none;font-weight:bold;padding:5px 15px 5px 10px;}
+
+ul.shortcurt li img{padding-right:10px;}
+
+ul.shortcurt li:first-child{margin-left:0px;}
+
+ul.shortcurt li:hover{border:0px solid #898F9C}
+ul.shortcurt li a:hover{color:#333;}
+/*************added by Tawfique******************/
+
+
+#wrap{
+
+}
+.main-sidebar {padding-top:0; width:230px;}
+
+.main-header {
+    background-color:#3C8DBC;
+    margin:0;
+}
+
+.main-header .logo {
+    width:230px;
+}
+.nav > li > a, .navbar a {
+    color:white;
+}
+.mybody{
+    padding-top:50px;
+    display: table-cell;
+    min-width:1080px;
+    min-height: 100%;
+    padding:0;
+    margin:0;
+    position:absolute;
+    top:50px;
+    bottom:0;
+}
+
+.main, .sidebar {
+    float:none;
+    vertical-align: top;
+}
+.sidebar {
+    display: table-cell;
+    background-color:#222d32;
+    position:relative;
+}
+
+.main {
+    display: table-cell;
+    padding:0;
+    margin:0;
+    width:100%;
+}
+.main, .sidebar {
+    padding-bottom:40px;
+
+}
+#footer {
+    position:fixed;
+    bottom:0;
+    z-index:900;
+    /*margin-left:180px;*/
+}
+#skindiv a, #skindiv p  {color:#b8c7ce;}
+#skinmenu {
+    padding-right: 6px !important;
+    padding-bottom: 2px !important;
+    padding-top: 2px !important;
+    padding-left: 6px !important;
+
+}
+.submenu { background-color:#2c3b41;}
+
+.header-admin {margin-left:0;}
+.header-admin .navbar {margin-left:0;}
+.header-user > .navbar {margin-left:180px;}
+.header-admin > ul > li {
+    display:inline-block;
+    float:none;
+}
+.header-admin > ul > li > a{padding: 18px 15px;}
+.header-admin .navbar > ul > li {display:inline-block;}
+
+.sidebar-menu, .main-sidebar .user-panel, .sidebar-menu > li.header {
+    white-space: '';
+}
+
+/**********custom skin color for .skin-blue **************/
+body.skin-blue , .skin-blue .mypage, .skin-blue .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#ecf4f9 !important;
+}
+.skin-blue .mypage   table.data  th {
+    background-color:#31749b !important;
+}
+.skin-blue .sidebar-menu > li > a , .skin-blue.dropdown-menu>li>a{
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-blue ul#navmenu  > li  > a:hover, .skin-blue ul#navmenu .submenu  > li  > a:hover, .skin-blue #skindiv a:hover{
+    background:#3C8DBC;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-blue .mypage  table.data  th.short  {
+    background-color:#31749b !important;
+}
+
+.skin-blue .mypage .filter form, .skin-blue .mypage .filter form  table, .skin-blue .mypage #content table.data  tr:hover {
+    background-color:#c5deed;
+}
+.skin-blue .mypage .btn-success {
+    background-color:#183a4e !important;
+    border-color:#183a4e !important;
+}
+.skin-blue  .usage h2, .skin-blue .dropdown-menu {color:white;background-color:#3c8dbc; border-color:#3c8dbc;}
+.skin-blue .mypage .usage, .skin-blue .mypage .usage td{border-color:#3c8dbc;}
+.skin-blue .mypage .usage {background-color:white;}
+.skin-blue .mypage .usage h3 a {color:white;}
+
+/* .skin-blue .user-menu  i {
+	color:white;
+} */
+/**********CLOSE custom skin color for .skin-blue **************/
+
+
+/**********custom skin color for .skin-blue-light **************/
+body.skin-blue-light, .skin-blue-light .mypage, .skin-blue-light .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#ecf4f9 !important;
+}
+.skin-blue-light .mypage   table.data  th {
+    background-color:#31749b !important;
+}
+
+.skin-blue-light.mypage  table.data  th.short  {
+    background-color:#31749b !important;
+}
+.skin-blue-light .sidebar-menu > li > a , .skin-blue-light .dropdown-menu>li>a{
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+.skin-blue-light ul#navmenu  > li  > a:hover, .skin-blue-light ul#navmenu .submenu  > li  > a:hover, .skin-blue-light #skindiv a:hover{
+    background:#3C8DBC;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-blue-light .mypage .filter form, .skin-blue-light .mypage .filter form  table, .skin-blue-light .mypage #content table.data  tr:hover {
+    background-color:#c5deed;
+}
+.skin-blue-light .mypage .btn-success {
+    background-color:#183a4e !important;
+    border-color:#183a4e !important;
+}
+.skin-blue-light .usage h2 , .skin-blue-light .dropdown-menu{color:white;background-color:#3c8dbc; border-color:#3c8dbc;}
+.skin-blue-light .mypage .usage, .skin-blue-light .mypage .usage td{border-color:#3c8dbc;}
+.skin-blue-light .mypage .usage {background-color:white;}
+.skin-blue-light .mypage .usage h3 a {color:white;}
+/* .skin-blue .user-menu  i {
+	color:white;
+} */
+/**********CLOSE custom skin color for .skin-blue-light **************/
+
+
+/**********custom skin color for .skin-black **************/
+body.skin-black , .skin-black .mypage, .skin-black .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#f1f1f1 !important;
+}
+.skin-black .mypage .filter form, .skin-black .mypage .filter form  table, .skin-black .mypage #content table.data  tr:hover{
+    /*background-color:#c5deed; */
+}
+.skin-black .mypage   table.data  th, .skin-black .mypage table.data  th.short  {
+    background-color:#1a2226 !important;
+}
+.skin-black .sidebar-menu > li > a, .skin-black .dropdown-menu>li>a {
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+.skin-black ul#navmenu  > li  > a:hover, .skin-black ul#navmenu .submenu  > li  > a:hover, .skin-black #skindiv a:hover{
+    background:#1a2226;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+.skin-black .usage h2, .skin-black .dropdown-menu {color:white;background-color:#1a2226; border-color:#1a2226;}
+.skin-black .mypage .usage, .skin-black .mypage .usage td{border-color:black;}
+.skin-black .mypage .usage {background-color:white;}
+.skin-black .mypage .usage h3 a {color:black;}
+/**********CLOSE custom skin color for .skin-black **************/
+
+/**********custom skin color for .skin-black-light **************/
+body.skin-black-light , .skin-black-light .mypage, .skin-black-light .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#f1f1f1 !important;
+}
+.skin-black-light .sidebar-menu > li > a, .skin-black-light .dropdown-menu>li>a  {
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+.skin-black-light ul#navmenu  > li  > a:hover, .skin-black-light ul#navmenu .submenu  > li  > a:hover, .skin-black-light #skindiv a:hover{
+    background:#1a2226;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+.skin-black-light .mypage   table.data  th, .skin-black-light .mypage table.data  th.short  {
+    background-color:#1a2226 !important;
+}
+.skin-black-light .usage h2, .skin-black-light .dropdown-menu {color:white;background-color:#1a2226; border-color:#1a2226;}
+.skin-black-light .mypage .usage, .skin-black-light .mypage .usage td{border-color:black;}
+.skin-black-light .mypage .usage {background-color:white;}
+.skin-black-light .mypage .usage h3 a {color:black;}
+
+/**********CLOSE custom skin color for .skin-black-light **************/
+
+/**********custom skin color for .skin-purple **************/
+body.skin-purple, .skin-purple .mypage, .skin-purple .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#efeef6 !important;
+}
+.skin-purple .mypage .filter form, .skin-purple .mypage .filter form  table, .skin-purple .mypage #content table.data  tr:hover  {
+    background-color:#dfdeed;
+}
+.skin-purple .mypage   table.data  th, .skin-purple .mypage  table.data  th.short  {
+    background-color: #413e74 !important;
+}
+.skin-purple .sidebar-menu > li > a, .skin-purple .dropdown-menu>li>a  {
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-purple ul#navmenu  > li  > a:hover, .skin-purple ul#navmenu .submenu  > li  > a:hover, .skin-purple #skindiv a:hover{
+    background:#605CA8;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-purple .mypage .btn-primary {
+    background-color:#605CA8 !important;
+    border-color:#605CA8 !important;
+}
+
+.skin-purple .mypage .btn-success {
+    background-color:#383663 !important;
+    border-color:#383663 !important;
+
+}
+.skin-purple .usage h2 , .skin-purple .dropdown-menu{color:white;background-color:#605CA8; border-color:#605CA8;}
+.skin-purple .mypage .usage, .skin-purple .mypage .usage td{border-color:#605CA8;}
+.skin-purple .mypage .usage {background-color:white;}
+.skin-purple .mypage .usage h3  a {color:white;}
+
+/**********CLOSE custom skin color for .skin-purple **************/
+
+/**********custom skin color for .skin-purple-light **************/
+body.skin-purple-light, .skin-purple-light .mypage, .skin-purple-light .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#efeef6 !important;
+}
+.skin-purple-light .mypage .filter form, .skin-purple-light .mypage .filter form  table, .skin-purple-light .mypage #content table.data  tr:hover  {
+    background-color:#dfdeed;
+}
+.skin-purple-light .mypage   table.data  th, .skin-purple-light .mypage  table.data  th.short  {
+    background-color: #413e74 !important;
+}
+.skin-purple-light .sidebar-menu > li > a , .skin-purple-light .dropdown-menu>li>a {
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-purple-light ul#navmenu  > li  > a:hover, .skin-purple-light ul#navmenu .submenu  > li  > a:hover, .skin-purple-light #skindiv a:hover{
+    background:#605CA8;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+
+.skin-purple-light .mypage .btn-primary {
+    background-color:#605CA8 !important;
+    border-color:#605CA8 !important;
+}
+
+.skin-purple-light .mypage .btn-success {
+    background-color:#383663 !important;
+    border-color:#383663 !important;
+}
+.skin-purple-light .usage h2, .skin-purple-light .dropdown-menu {color:white;background-color:#605CA8; border-color:#605CA8;}
+.skin-purple-light .mypage .usage, .skin-purple-light .mypage .usage td{border-color:#605CA8;}
+.skin-purple-light .mypage .usage {background-color:white;}
+.skin-purple-light .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-purple-light **************/
+
+
+/**********custom skin color for .skin-green **************/
+body.skin-green, .skin-green .mypage, .skin-green .table-striped tbody > tr:nth-child(even) > td {
+    background-color:#e6fff4 !important;
+}
+.skin-green .mypage .filter form, .skin-green .mypage .filter form  table, .skin-green .mypage #content table.data  tr:hover {
+    background-color:#ccffe8;
+}
+.skin-green .mypage   table.data  th, .skin-green .mypage  table.data  th.short  {
+    background-color: #004d2a !important;
+}
+.skin-green .sidebar-menu > li > a, .skin-green .dropdown-menu>li>a  {
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+.skin-green ul#navmenu  > li  > a:hover, .skin-green ul#navmenu .submenu  > li  > a:hover, .skin-green #skindiv a:hover{
+    background:#00A65A;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+.skin-green .mypage .btn-primary {
+    background-color:#00A65A !important;
+    border-color:#00A65A !important;
+}
+.skin-green .mypage .btn-success {
+    background-color:#006638 !important;
+    border-color:#006638 !important;
+}
+.skin-green .usage h2, .skin-green .dropdown-menu {color:white;background-color:#00A65A; border-color:#00A65A;}
+.skin-green .mypage .usage, .skin-green .mypage .usage td{border-color:#00A65A;}
+.skin-green .mypage .usage {background-color:white;}
+.skin-green .mypage .usage h3  a {color:white;}
+/**********custom skin color for .skin-green **************/
+
+/**********custom skin color for .skin-green-light **************/
+body.skin-green-light, .skin-green-light .mypage, .skin-green-light .table-striped tbody > tr:nth-child(even) > td {
+    background-color:#e6fff4 !important;
+}
+.skin-green-light .mypage .filter form, .skin-green-light .mypage .filter form  table, .skin-green-light .mypage #content table.data  tr:hover {
+    background-color:#b3ffdd;
+}
+.skin-green-light .mypage   table.data  th, .skin-green-light .mypage  table.data  th.short  {
+    background-color: #004d2a !important;
+}
+.skin-green-light .sidebar-menu > li > a, .skin-green-light .dropdown-menu>li>a {
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+.skin-green-light ul#navmenu  > li  > a:hover, .skin-green-light ul#navmenu .submenu  > li  > a:hover, .skin-green-light #skindiv a:hover{
+    background:#00A65A;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+.skin-green-light .mypage .btn-primary {
+    background-color:#00A65A !important;
+    border-color:#00A65A !important;
+}
+.skin-green-light .mypage .btn-success {
+    background-color:#006638 !important;
+    border-color:#006638 !important;
+}
+.skin-green-light .usage h2, .skin-green-light .dropdown-menu {color:white;background-color:#00A65A; border-color:#00A65A;}
+.skin-green-light .mypage .usage, .skin-green-light .mypage .usage td{border-color:#00A65A;}
+.skin-green-light .mypage .usage {background-color:white;}
+.skin-green-light .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-green-light **************/
+
+/**********custom skin color for .skin-red  **************/
+body.skin-red, .skin-red .mypage, .skin-red .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#fbebe9 !important;
+}
+.skin-red .mypage .filter form, .skin-red .mypage .filter form  table, .skin-red .mypage #content table.data  tr:hover{
+    background-color:#f8d8d3;
+}
+.skin-red .mypage   table.data  th, .skin-red .mypage  table.data  th.short  {
+    background-color: #41110b !important;
+}
+.skin-red .sidebar-menu > li > a, .skin-red .dropdown-menu>li>a {
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-red ul#navmenu  > li  > a:hover, .skin-red ul#navmenu .submenu  > li  > a:hover, .skin-red #skindiv a:hover{
+    background:#DD4B39;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-red .mypage .btn-primary {
+    background-color:#DD4B39 !important;
+    border-color:#DD4B39 !important;
+}
+
+.skin-red .mypage .btn-danger {
+    background-color:#ff0000 !important;
+    border-color:#ff0000 !important;
+}
+
+.skin-red .mypage .btn-success {
+    background-color:#57170f !important;
+    border-color:#57170f !important;
+}
+.skin-red .usage h2 , .skin-red .dropdown-menu{color:white;background-color:#DD4B39; border-color:#DD4B39;}
+.skin-red .mypage .usage, .skin-red .mypage .usage td{border-color:#DD4B39;}
+.skin-red .mypage .usage {background-color:white;}
+.skin-red .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-red  **************/
+
+/**********custom skin color for .skin-red-light  **************/
+body.skin-red-light, .skin-red-light .mypage, .skin-red-light .table-striped tbody > tr:nth-child(even) > td{
+    background-color:#fbebe9 !important;
+}
+.skin-red-light .mypage .filter form, .skin-red-light .mypage .filter form  table, .skin-red-light .mypage #content table.data  tr:hover{
+    background-color:#f8d8d3;
+}
+.skin-red-light .mypage   table.data  th, .skin-red-light .mypage  table.data  th.short  {
+    background-color: #41110b !important;
+}
+.skin-red-light .sidebar-menu > li > a, .skin-red-light .dropdown-menu>li>a {
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-red-light ul#navmenu  > li  > a:hover, .skin-red-light ul#navmenu .submenu  > li  > a:hover, .skin-red-light #skindiv a:hover{
+    background:#DD4B39;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-red-light .mypage .btn-primary {
+    background-color:#DD4B39 !important;
+    border-color:#DD4B39 !important;
+}
+
+.skin-red-light .mypage .btn-danger {
+    background-color:#ff0000 !important;
+    border-color:#ff0000 !important;
+}
+
+.skin-red-light .mypage .btn-success {
+    background-color:#57170f !important;
+    border-color:#57170f !important;
+}
+.skin-red-light .usage h2, .skin-red-light .dropdown-menu {color:white;background-color:#DD4B39; border-color:#DD4B39;}
+.skin-red-light .mypage .usage, .skin-red-light .mypage .usage td{border-color:#DD4B39;}
+.skin-red-light .mypage .usage {background-color:white;}
+.skin-red-light .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-red-light  **************/
+
+/**********custom skin color for .skin-yellow  **************/
+body.skin-yellow, .skin-yellow .mypage, .skin-yellow .table-striped tbody > tr:nth-child(even) > td {
+    background-color:#fef5e7 !important;
+}
+.skin-yellow .mypage .filter form, .skin-yellow .mypage .filter form  table, .skin-yellow .mypage #content table.data  tr:hover{
+    background-color:#fbe1b6;
+}
+.skin-yellow .mypage   table.data  th, .skin-yellow .mypage  table.data  th.short  {
+    background-color: #492e04 !important;
+}
+.skin-yellow .sidebar-menu > li > a, .skin-yellow.dropdown-menu>li>a{
+    color: white;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-yellow ul#navmenu  > li  > a:hover, .skin-yellow ul#navmenu .submenu  > li  > a:hover, .skin-yellow #skindiv a:hover{
+    background:#cc6600;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-yellow .mypage .btn-primary {
+    background-color:#cc6600 !important;
+    border-color:#cc6600 !important;
+}
+
+.skin-yellow .mypage .btn-success {
+    background-color:#613e05 !important;
+    border-color:#613e05 !important;
+}
+.skin-yellow .usage h2, .skin-yellow.dropdown-menu {color:white;background-color:#cc6600; border-color:#cc6600;}
+.skin-yellow .mypage .usage, .skin-yellow .mypage .usage td{border-color:#cc6600;}
+.skin-yellow .mypage .usage {background-color:white;}
+.skin-yellow .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-yellow  **************/
+
+/**********custom skin color for .skin-yellow-light  **************/
+body.skin-yellow-light, .skin-yellow-light .mypage, .skin-yellow-light .table-striped tbody > tr:nth-child(even) > td {
+    background-color:#fef5e7 !important;
+}
+.skin-yellow-light .mypage .filter form, .skin-yellow-light .mypage .filter form  table, .skin-yellow-light .mypage #content table.data  tr:hover{
+    background-color:#fbe1b6;
+}
+.skin-yellow-light .mypage   table.data  th, .skin-yellow-light .mypage  table.data  th.short  {
+    background-color: #492e04 !important;
+}
+.skin-yellow-light .sidebar-menu > li > a, .skin-yellow-light.dropdown-menu>li>a {
+    color: black;
+    font-weight: 100;
+    font-weight: unset;
+}
+
+.skin-yellow-light ul#navmenu  > li  > a:hover, .skin-yellow-light ul#navmenu .submenu  > li  > a:hover, .skin-yellow-light #skindiv a:hover{
+    background:#cc6600;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-top:0px solid #2E69AE;
+}
+
+.skin-yellow-light .mypage .btn-primary {
+    background-color:#cc6600 !important;
+    border-color:#cc6600 !important;
+}
+
+.skin-yellow-light .mypage .btn-success {
+    background-color:#613e05 !important;
+    border-color:#613e05 !important;
+}
+.skin-yellow-light .usage h2, .skin-yellow-light.dropdown-menu {color:white;background-color:#cc6600; border-color:#cc6600;}
+.skin-yellow-light .mypage .usage, .skin-yellow-light .mypage .usage td{border-color:#cc6600;}
+.skin-yellow-light .mypage .usage {background-color:white;}
+.skin-yellow-light .mypage .usage h3  a {color:white;}
+/**********CLOSE custom skin color for .skin-yellow-light  **************/
+.skin-black .logo a, .skin-black-light .logo a { color:black;}
+
+.skin-blue-light  #skindiv a,
+.skin-black-light  #skindiv a,
+.skin-purple-light  #skindiv a,
+.skin-green-light  #skindiv a,
+.skin-red-light  #skindiv a,
+.skin-yellow-light  #skindiv a,
+.skin-blue-light  #skindiv p,
+.skin-black-light #skindiv p,
+.skin-purple-light #skindiv p,
+.skin-green-light #skindiv p,
+.skin-red-light #skindiv p,
+.skin-yellow-light #skindiv p {
+    color:black;
+}

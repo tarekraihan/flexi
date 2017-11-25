@@ -85,14 +85,14 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>main/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>main/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>main/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
-            <li class="treeview"><a href="#"><span>International Flexi</span></a></li>
-            <li class="treeview"><a href="#"><span>Package Recharge</span></a></li>
-            <li class="treeview"><a href="#"><span>Pending Request</span></a></li>
+            <li><a href="#"><span>International Flexi</span></a></li>
+            <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span></a></li>
+            <li><a href="#"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">
                     <span>History</span>
@@ -101,10 +101,10 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> All History</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>main/all"><i class="fa fa-circle-o"></i> All History</a></li>
+                    <li><a href="<?php echo base_url();?>main/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>main/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>main/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
             <li class="treeview"><a href="#"><span>Reseller</span></a></li>

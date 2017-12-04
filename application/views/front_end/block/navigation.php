@@ -91,7 +91,7 @@
                 </ul>
             </li>
             <li><a href="#"><span>International Flexi</span></a></li>
-            <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span></a></li>
+            <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span> </a></li>
             <li><a href="#"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/dist/css/menu.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/dist/css/erecharge.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/dist/css/skins/_all-skins.css">
@@ -26,6 +28,7 @@
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>resource/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

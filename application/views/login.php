@@ -12,7 +12,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta http-equiv="imagetoolbar" content="no" />
-	<title>Noor Flexi biling :: Noor Flexi Ultimate recharge solution</title>
+	<title><?=$title?></title>
 	<link href="<?php echo base_url();?>resource/login//img/easyrecharge.png" rel="icon" type="image/x-icon" id="page_favicon"/>
 	<link href="<?php echo base_url();?>resource/login/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>resource/login/css/login.css" rel="stylesheet" type="text/css">
@@ -42,16 +42,20 @@
 				<p style="font-size:9px; color:black; text-align:center;">System: compatible,  IP: <?php echo $_SERVER["REMOTE_ADDR"];?></p>
 				  <div class="form-group ">
 					<label class="control-label sr-only" for="username">Username</label>
-					<input type="text" name="username" id="username" class="form-control input-sm" placeholder="Username or e-mail" value="">
+					<input type="text" name="txtUsername" id="txtUsername" class="form-control input-sm" placeholder="Username or e-mail" value="">
 				  </div>
 				  <div class="form-group ">
 					<label class="control-label sr-only" for="password">Password</label>
-					<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" value="">
+					<input type="password" name="txtPassword" id="txtPassword" class="form-control input-sm" placeholder="Password" value="">
 				  </div>
 				  <div class="form-group">
 					 <button type="submit" class="btn btn-danger btn-sm btn-block" >Log In</button>
 				  </div>
-				<p style="font-size:11px;color:red;"></p>
+				<p style="font-size:11px;color:red;">
+                <?php
+                echo $this->session->flashdata('error_message');
+
+                ?></p>
 				<p><a href="<?php echo base_url();?>forgot" title="Reset your password">Forgot Password?</a></p>
 				<p><a href="<?php echo base_url();?>register" title="Register a new account">Create Account</a></p>
 				<p><a href="" title="Get it on Google Play" target="_blank"><img src="<?php echo base_url();?>resource/login/logo/play_store.png"></a></p>

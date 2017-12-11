@@ -25,15 +25,15 @@
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="hidden-xs">Alexander Pierce</span>
+        <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('fullname'));?></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header">
             <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
             <p>
-                Full Namae - sanaulla@bd (III)
-                <small>Balance: <b>890.00</b></small>
+                Full Namae - <?php echo $this->session->userdata('username');?>
+                <small>Balance: <b><?php echo number_format($row['current_balance'],2);?></b></small>
             </p>
         </li>
         <!-- Menu Body -->
@@ -54,7 +54,7 @@
                 <a href="main/profile" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-                <a href="logout" class="btn btn-default btn-flat">Logout</a>
+                <a href="<?php echo base_url();?>login/logout" class="btn btn-default btn-flat">Logout</a>
             </div>
         </li>
     </ul>
@@ -85,13 +85,13 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>main/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>main/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>main/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>admin/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>admin/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>admin/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
             <li><a href="#"><span>International Flexi</span></a></li>
-            <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span> </a></li>
+            <li><a href="<?php echo base_url();?>admin/package_recharge"><span>Package Recharge</span> </a></li>
             <li><a href="#"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">
@@ -101,10 +101,10 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>main/all"><i class="fa fa-circle-o"></i> All History</a></li>
-                    <li><a href="<?php echo base_url();?>main/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>main/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>main/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>admin/all"><i class="fa fa-circle-o"></i> All History</a></li>
+                    <li><a href="<?php echo base_url();?>admin/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>admin/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>admin/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
             <li class="treeview"><a href="#"><span>Reseller</span></a></li>

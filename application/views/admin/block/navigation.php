@@ -25,15 +25,15 @@
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="hidden-xs">Alexander Pierce</span>
+        <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('fullname'));?></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header">
             <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
             <p>
-                Full Namae - sanaulla@bd (III)
-                <small>Balance: <b>890.00</b></small>
+                Full Namae - <? echo $this->session->userdata('username');?>
+                <small>Balance: <b><?php $row['current_balance'];?></b></small>
             </p>
         </li>
         <!-- Menu Body -->
@@ -54,7 +54,7 @@
                 <a href="main/profile" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-                <a href="logout" class="btn btn-default btn-flat">Logout</a>
+                <a href="<?php echo base_url();?>login/logout" class="btn btn-default btn-flat">Logout</a>
             </div>
         </li>
     </ul>

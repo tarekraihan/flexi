@@ -134,5 +134,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('Common_model');
 //$autoload['model'] = array('Registration_model','Common_model','Delete_model','Select_model','Front_end_select_model');

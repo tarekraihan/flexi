@@ -5,65 +5,106 @@ class Admin extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/index');
-        $this->load->view('admin/block/footer');
+        if ($this->session->userdata('admin_email')) {
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/index');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
+
     }
     public function flexiload()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/flexiload');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/flexiload');
+            $this->load->view('front_end/block/footer');
+
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function package_recharge()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/package_recharge');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/package_recharge');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function dbbl()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/dbbl');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/dbbl');
+            $this->load->view('front_end/block/footer');
+
+        }else{
+            redirect(base_url().'login');
+        }
+
     }
     public function bkash()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/bkash');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/bkash');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function all()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/allhistory');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/allhistory');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function bkash_history()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/bkash_history');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/bkash_history');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function dbbl_history()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/dbbl_history');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/dbbl_history');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
     public function flexi_history()
     {
-        $this->load->view('admin/block/header');
-        $this->load->view('admin/block/navigation');
-        $this->load->view('admin/flexi_history');
-        $this->load->view('admin/block/footer');
+        if(! $this->session->userdata('admin_email')){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/flexi_history');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
     }
 }

@@ -5,7 +5,7 @@ class Main extends CI_Controller {
 	public function index()
 	{
         if ($this->session->userdata('user_email')) {
-            $query = $this->db->query("Select current_balance From users where id= {$this->session->user_id}");
+            $query = $this->db->query("Select current_balance From users where id= '{$this->session->userdata('user_id')}'");
             $data['row'] = $query->row_array();
             $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/navigation');

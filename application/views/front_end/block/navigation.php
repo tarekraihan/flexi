@@ -33,8 +33,16 @@
             <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
             <p>
                 Full Namae - <?php echo $this->session->userdata('username');?>
-                <small>Balance: <b><?php echo number_format($row['current_balance'],2);?></b></small>
+                <small>Balance: <b>
+                        <?php
+                        $query = $this->db->query("Select current_balance From users where id= '{$this->session->userdata('user_id')}'");
+                        $row = $query->row_array();
+                        echo number_format($row['current_balance'],2);
+                        ?>
+                    </b>
+                </small>
             </p>
+
         </li>
         <!-- Menu Body -->
         <li style="display:none;" class="user-body">
@@ -71,7 +79,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="active treeview">
-                <a href="<?php echo base_url();?>admin">
+                <a href="<?php echo base_url();?>main">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
 
@@ -85,13 +93,13 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>admin/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>admin/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>admin/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>main/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>main/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>main/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
             <li><a href="#"><span>International Flexi</span></a></li>
-            <li><a href="<?php echo base_url();?>admin/package_recharge"><span>Package Recharge</span> </a></li>
+            <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span> </a></li>
             <li><a href="#"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">
@@ -101,10 +109,10 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>admin/all"><i class="fa fa-circle-o"></i> All History</a></li>
-                    <li><a href="<?php echo base_url();?>admin/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>admin/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>admin/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>main/all"><i class="fa fa-circle-o"></i> All History</a></li>
+                    <li><a href="<?php echo base_url();?>main/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
+                    <li><a href="<?php echo base_url();?>main/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
+                    <li><a href="<?php echo base_url();?>main/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
             <li class="treeview"><a href="#"><span>Reseller</span></a></li>

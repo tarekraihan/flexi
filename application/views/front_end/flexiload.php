@@ -25,26 +25,33 @@
                                 <p class="help-block">Send Flexiload</p>
                                 <div class="form-group">
                                     <label class="control-label" for="number">Number</label>
-                                    <input type="text" name="number" id="number" class="form-control input-sm" placeholder="eg: 0171XXXXXXX" value=" value="<?php echo set_value('number'); ?>"">
+                                    <input type="tel" name="number" id="number" class="form-control input-sm" placeholder="eg: 0171XXXXXXX" value="<?php echo set_value('number'); ?>">
                                     <p class="help-block form_note">[ 017, 919, 923 ]</p>
                                 </div>
                                 <div class="form-group ">
                                     <label class="control-label" for="amount">Amount</label>
-                                    <input type="text" name="amount" id="amount" class="form-control input-sm" placeholder="eg: 100" value=" value="<?php echo set_value('amount'); ?>"">
+                                    <input type="number" name="amount" id="amount" class="form-control input-sm" placeholder="eg: 100" value="<?php echo set_value('amount'); ?>">
                                     <p class="help-block form_note">[ Min 10, Max 2000 ]</p>
                                 </div>
                                 <div class="form-group ">
                                     <label class="control-label" for="type">Type</label>
                                     <select class="form-control input-sm" name="type">
-                                        <option value="1">Prepaid</option>
-                                        <option value="2">PostPaid</option>
+                                        <option value="Prepaid">Prepaid</option>
+                                        <option value="PostPaid">PostPaid</option>
                                     </select>
                                 </div>
-                                <input type="hidden" name="valid">
                                 <p class="help-block form_error" style="font-size:11px;">
-                                    <?php echo validation_errors('<div class="error">', '</div>'); ?>
+                                    <?php
+                                        echo validation_errors('<div class="error">', '</div>');
+                                        echo $this->session->flashdata('error_message');
+                                    ?>
                                 </p>
-                                <p class="help-block line">&nbsp;</p>
+                                <p class="help-block" style="font-size:11px;color:green">
+                                    <?php
+                                    echo $this->session->flashdata('success_message');
+
+                                    ?>
+                                </p>
                                 <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-send"></span> &nbsp;Send</button>
                             </td>
                         </tr>
@@ -57,21 +64,39 @@
                         <table cellspacing="0" class="table10">
                             <thead>
                             <tr>
+                                <th>SL No</th>
                                 <th>Number</th>
                                 <th>Amount</th>
-                                <th>Cost</th>
                                 <th>Type</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>01813083213</td>
-                                <td>1</td>
-                                <td>1.00</td>
-                                <td>Prepaid</td>
-                                <td style="font-weight:bold;"><span style="color:red">Cancelled</span></td>
-                            </tr>
+                            <?php
+                            $i = 1;
+                            foreach($requests as $request){
+                                ?>
+                                <tr>
+                                    <td><?php echo $i;?></td>
+                                    <td><?php echo $request->to_number;?></td>
+                                    <td>TK <?php echo $request->amount; ?></td>
+                                    <td><?php echo $request->type;?></td>
+                                    <td>
+                                        <?php
+                                         if($request->status == 'Pending'){
+                                             echo $request->status;
+                                         }else if ($request->status == 'Send'){
+                                             echo '<span class="success">'.$request->status.'</span>';
+                                         }else{
+                                             echo '<span class="error">'.$request->status.'</span>';
+                                         }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <?php
+                                $i++;
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

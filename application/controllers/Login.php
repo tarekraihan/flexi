@@ -65,6 +65,13 @@ class Login extends CI_Controller {
 
     }
 
+    public function checkpoint(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('checkpoint');
+        $this->load->view('front_end/block/footer');
+
+    }
+
     public function logout() {
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('password');

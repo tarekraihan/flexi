@@ -15,18 +15,19 @@
                     <div class="row" style="margin-top:5px;">
                         <div class="col-md-12 fleft">
                             <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
 
-                            <div style="vertical-align:top;">
+                                    <div style="vertical-align:top;">
 
-                            </div>
-                                <div style="vertical-align:top;">
-                                    <div style="margin:0px;padding:0px;background:#fff;">
-                                        <table cellspacing="0" class="table10">
-                                            <thead>
+                                    </div>
+                                    <div style="vertical-align:top;">
+                                        <div style="margin:0px;padding:0px;background:#fff;">
+                                            <table cellspacing="0" class="table10">
+                                                <thead>
                                                 <tr>
                                                     <th>ID.</th>
                                                     <th>Number</th>
+                                                    <th>Req. Type</th>
                                                     <th>Amount</th>
                                                     <th>Cost</th>
                                                     <th>Sender</th>
@@ -37,65 +38,58 @@
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Pending</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Pending</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Refund</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Success</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                $i = 1;
+                                                foreach($requests as $request){
+                                                    ?>
+                                                    <tr>
+                                                        <td><?php echo $i;?></td>
+                                                        <td><?php echo $request->to_number;?></td>
+                                                        <td><?php echo $request->request_type; ?></td>
+                                                        <td>TK <?php echo $request->amount; ?></td>
+                                                        <td>TK <?php echo $request->amount; ?></td>
+                                                        <td><?php echo $this->session->userdata('username'); ?></td>
+                                                        <td><?php echo ($request->request_date_time) ? date('d F Y h:i A', strtotime($request->request_date_time)) : '';?></td>
+                                                        <td><?php echo ($request->delivery_date_time) ? date('d F Y h:i A', strtotime($request->delivery_date_time)) : '';?></td>
+                                                        <td><?php echo $request->transaction_id; ?></td>
+                                                        <td><?php echo $request->balance_after_deduct; ?></td>
+
+                                                        <td>
+                                                            <?php
+                                                            if($request->status == 'Pending'){
+                                                                echo $request->status;
+                                                            }else if ($request->status == 'Send'){
+                                                                echo '<span class="success">'.$request->status.'</span>';
+                                                            }else{
+                                                                echo '<span class="error">'.$request->status.'</span>';
+                                                            }
+                                                            ?>
+                                                        </td>
+
+                                                        <td>
+                                                            <?php
+                                                            if($request->status == 'Pending'){
+                                                                echo '<a href="">delete</a>';
+                                                            }else if ($request->status == 'Send'){
+                                                                echo '<span class="success">'.$request->status.'</span>';
+                                                            }else{
+                                                                echo '<span class="error">'.$request->status.'</span>';
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                    $i++;
+                                                }
+                                                ?>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
 
                             </div>

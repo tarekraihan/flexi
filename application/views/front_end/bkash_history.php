@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="ezttle"><span class="text">Flexiload History</span></div>
+        <div class="ezttle"><span class="text">BKash History</span></div>
     </section>
 
     <!-- Main content -->

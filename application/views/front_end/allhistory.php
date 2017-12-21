@@ -27,6 +27,7 @@
                                                 <tr>
                                                     <th>ID.</th>
                                                     <th>Number</th>
+                                                    <th>Req. Type</th>
                                                     <th>Amount</th>
                                                     <th>Cost</th>
                                                     <th>Sender</th>
@@ -39,58 +40,51 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            <?php
+                                            $i = 1;
+                                            foreach($requests as $request){
+                                                ?>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Pending</td>
-                                                    <th><a href="">delete</a> </th>
+                                                    <td><?php echo $i;?></td>
+                                                    <td><?php echo $request->to_number;?></td>
+                                                    <td><?php echo $request->request_type; ?></td>
+                                                    <td>TK <?php echo $request->amount; ?></td>
+                                                    <td>TK <?php echo $request->amount; ?></td>
+                                                    <td><?php echo $this->session->userdata('username'); ?></td>
+                                                    <td><?php echo ($request->request_date_time) ? date('d F Y h:i A', strtotime($request->request_date_time)) : '';?></td>
+                                                    <td><?php echo ($request->delivery_date_time) ? date('d F Y h:i A', strtotime($request->delivery_date_time)) : '';?></td>
+                                                    <td><?php echo $request->transaction_id; ?></td>
+                                                    <td><?php echo $request->balance_after_deduct; ?></td>
+
+                                                    <td>
+                                                        <?php
+                                                        if($request->status == 'Pending'){
+                                                            echo $request->status;
+                                                        }else if ($request->status == 'Send'){
+                                                            echo '<span class="success">'.$request->status.'</span>';
+                                                        }else{
+                                                            echo '<span class="error">'.$request->status.'</span>';
+                                                        }
+                                                        ?>
+                                                    </td>
+
+                                                    <td>
+                                                        <?php
+                                                        if($request->status == 'Pending'){
+                                                            echo '<a href="">delete</a>';
+                                                        }else if ($request->status == 'Send'){
+                                                            echo '<span class="success">'.$request->status.'</span>';
+                                                        }else{
+                                                            echo '<span class="error">'.$request->status.'</span>';
+                                                        }
+                                                        ?>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Pending</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Refund</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>01911223344</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>Noor</td>
-                                                    <td>07 November 2017 12:01 AM</td>
-                                                    <td></td>
-                                                    <td>908110010</td>
-                                                    <td>4400</td>
-                                                    <td>Success</td>
-                                                    <th><a href="">delete</a> </th>
-                                                </tr>
+                                                <?php
+                                                $i++;
+                                            }
+                                            ?>
+
                                             </tbody>
                                         </table>
                                     </div>

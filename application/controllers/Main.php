@@ -65,7 +65,7 @@ class Main extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE){
                 $query = $this->db->query("Select package.*,operator.operator_name  From package INNER JOIN operator ON operator.id= package.operator_id");
-                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Mobile Recharge'  AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id LIMIT 0,9");
+                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Mobile Recharge'  AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC LIMIT 0,9");
                 $data['rows'] = $query->result();
                 $data['requests'] = $request->result();
                 $data['title'] = 'NoorFlexi : Flexiload';
@@ -88,7 +88,7 @@ class Main extends CI_Controller {
 
                 $update_query = $this->db->query("UPDATE users SET current_balance = '{$balance_after_deduct}' WHERE id= '{$this->session->userdata('user_id')}'");
                 if($update_query){
-                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`) VALUES ('Mobile Recharge', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}')");
+                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`, `balance_after_deduct`) VALUES ('Mobile Recharge', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}','{$balance_after_deduct}')");
 
                     if($insert_query){
                         $this->session->set_flashdata('success_message', 'Your mobile recharge request successfully send.');
@@ -128,7 +128,7 @@ class Main extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE){
 
-                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='dbbl' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id LIMIT 0,9");
+                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='dbbl' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC LIMIT 0,9");
                 $data['requests'] = $request->result();
                 $data['title'] = 'NoorFlexi : DBBL';
                 $this->load->view('front_end/block/header',$data);
@@ -150,7 +150,7 @@ class Main extends CI_Controller {
 
                 $update_query = $this->db->query("UPDATE users SET current_balance = '{$balance_after_deduct}' WHERE id= '{$this->session->userdata('user_id')}'");
                 if($update_query){
-                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`) VALUES ('dbbl', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}')");
+                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`, `balance_after_deduct`) VALUES ('dbbl', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}','{$balance_after_deduct}')");
 
                     if($insert_query){
                         $this->session->set_flashdata('success_message', 'Your DBBL request successfully send.');
@@ -178,7 +178,7 @@ class Main extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE){
 
-                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='bkash' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id LIMIT 0,9");
+                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='bkash' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESc LIMIT 0,9");
                 $data['requests'] = $request->result();
                 $data['title'] = 'NoorFlexi : BKash';
                 $this->load->view('front_end/block/header',$data);
@@ -200,7 +200,7 @@ class Main extends CI_Controller {
 
                 $update_query = $this->db->query("UPDATE users SET current_balance = '{$balance_after_deduct}' WHERE id= '{$this->session->userdata('user_id')}'");
                 if($update_query){
-                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`) VALUES ('bkash', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}')");
+                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`, `balance_after_deduct`) VALUES ('bkash', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '','{$date}','{$balance_after_deduct}')");
 
                     if($insert_query){
                         $this->session->set_flashdata('success_message', 'Your bkash request successfully send.');
@@ -223,7 +223,10 @@ class Main extends CI_Controller {
 	public function all()
 	{
         if( $this->session->userdata('user_email')){
-            $this->load->view('front_end/block/header');
+            $request = $this->db->query("SELECT * FROM `all_request` WHERE user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : All';
+            $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/navigation');
             $this->load->view('front_end/allhistory');
             $this->load->view('front_end/block/footer');
@@ -234,7 +237,10 @@ class Main extends CI_Controller {
 	public function bkash_history()
 	{
 	    if( $this->session->userdata('user_email')){
-            $this->load->view('front_end/block/header');
+            $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='bkash' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : Bkash';
+            $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/navigation');
             $this->load->view('front_end/bkash_history');
             $this->load->view('front_end/block/footer');
@@ -245,7 +251,10 @@ class Main extends CI_Controller {
 	public function dbbl_history()
 	{
 	    if( $this->session->userdata('user_email')){
-            $this->load->view('front_end/block/header');
+            $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='dbbl' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : DBBL';
+            $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/navigation');
             $this->load->view('front_end/dbbl_history');
             $this->load->view('front_end/block/footer');
@@ -256,7 +265,10 @@ class Main extends CI_Controller {
 	public function flexi_history()
 	{
 	    if( $this->session->userdata('user_email')){
-            $this->load->view('front_end/block/header');
+	        $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Mobile Recharge' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : DBBL';
+            $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/navigation');
             $this->load->view('front_end/flexi_history');
             $this->load->view('front_end/block/footer');

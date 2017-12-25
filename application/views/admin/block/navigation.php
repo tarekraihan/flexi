@@ -16,49 +16,46 @@
 </a>
 -->
     <a href="<?php echo base_url();?>admin" class="logo" style="background-color: transparent;">
-        <span class="logo-lg">Tori Flexi</span>
+        <span class="logo-lg">Noor Flexi</span>
     </a>
 <div class="navbar-custom-menu">
 <ul class="nav navbar-nav">
 <!-- Messages: style can be found in dropdown.less-->
 
 <!-- User Account: style can be found in dropdown.less -->
-<li class="dropdown user user-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('fullname'));?></span>
-    </a>
-    <ul class="dropdown-menu">
-        <!-- User image -->
-        <li class="user-header">
-            <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
-            <p>
-                Full Namae - <? echo $this->session->userdata('username');?>
-                <small>Balance: <b><?php $row['current_balance'];?></b></small>
-            </p>
-        </li>
-        <!-- Menu Body -->
-        <li style="display:none;" class="user-body">
-            <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-            </div>
-            <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-            </div>
-            <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-            </div>
-        </li>
-        <!-- Menu Footer-->
-        <li class="user-footer">
-            <div class="pull-left">
-                <a href="main/profile" class="btn btn-default btn-flat">Profile</a>
-            </div>
-            <div class="pull-right">
-                <a href="<?php echo base_url();?>login/logout" class="btn btn-default btn-flat">Logout</a>
-            </div>
-        </li>
-    </ul>
-</li>
+    <li class="dropdown user user-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('admin_username'));?></span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+                <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
+                <p>
+                    Full Namae - <?php echo $this->session->userdata('admin_username');?>
+                    <small>Balance: <b>
+                            <?php
+                            $query = $this->db->query("Select current_balance From admins where id= '{$this->session->userdata('admin_user_id')}'");
+                            $row = $query->row_array();
+                            echo number_format($row['current_balance'],2);
+                            ?>
+                        </b>
+                    </small>
+                </p>
+
+            </li>
+            <!-- Menu Body -->
+            <!-- Menu Footer-->
+            <li class="user-footer">
+                <div class="pull-left">
+                    <a href="admin/profile" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                    <a href="<?php echo base_url();?>admin_login/logout" class="btn btn-default btn-flat">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </li>
 <!-- Control Sidebar Toggle Button -->
 </ul>
 </div>
@@ -77,200 +74,22 @@
 
             </li>
 
+            <br/>
+            <li><a href="<?php echo base_url();?>admin/pending"><span>Pending Request</span></a></li>
+            <li><a href="<?php echo base_url();?>admin/all_request"><span>All Request</span> </a></li>
+            <li><a href="<?php echo base_url();?>admin/transaction_report"><span>Transaction Report</span></a></li>
             <li class="treeview">
                 <a href="#">
-                    <span>New Request</span>
+                    <span>User Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>admin/flexiload"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>admin/bkash"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>admin/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>admin/add_user"><i class="fa fa-circle-o"></i>Add New User</a></li>
+                    <li><a href="<?php echo base_url();?>admin/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span>International Flexi</span></a></li>
-            <li><a href="<?php echo base_url();?>admin/package_recharge"><span>Package Recharge</span> </a></li>
-            <li><a href="#"><span>Pending Request</span></a></li>
-            <li class="treeview">
-                <a href="#">
-                    <span>History</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>admin/all"><i class="fa fa-circle-o"></i> All History</a></li>
-                    <li><a href="<?php echo base_url();?>admin/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
-                    <li><a href="<?php echo base_url();?>admin/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
-                    <li><a href="<?php echo base_url();?>admin/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
-                </ul>
-            </li>
-            <li class="treeview"><a href="#"><span>Reseller</span></a></li>
-            <li class="treeview"><a href="#"><span>Payment History</span></a></li>
-            <li class="treeview"><a href="#"><span>Receive History</span></a></li>
-            <li class="treeview">
-                <a href="#">
-                    <span>Report</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> Cost & Profit</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Balance Report</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Total Report</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <span>My Account</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> My Rates</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Add Balance</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Access Logs</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Setup PIN</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Change Pin</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Change Password</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Profile Update</a></li>
-                </ul>
-            </li>
-
-            <li class="treeview"><a href="#"><span>Complain</span></a></li>
-            <li class="treeview">
-                <a href="#">
-                    <span>Themes</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="">
-                        <div id="skindiv">
-                            <a href="javascript:void(0)" class="accordion-toggle">
-
-                                <span>Themes</span>
-                            </a>
-                            <ul style="" id="skinmenu" class=" accordion-content list-unstyled clearfix">
-
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9;"></span>
-                                            <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                                        </div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span>
-                                        </div>
-                                    </a>
-                                    <p class="text-center no-margin">Blue</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
-                                            <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe;"></span>
-                                        </div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span>
-                                        </div></a>
-                                    <p class="text-center no-margin">Black</p>
-                                </li>
-
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
-                                            <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin">Purple</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
-                                            <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin">Green</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
-                                            <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin">Red</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
-                                            <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #222d32;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin">Yellow</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9;"></span>
-                                            <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px">Blue Light</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
-                                            <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px">Black Light</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
-                                            <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px">Purple Light</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
-                                            <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div>
-                                            <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px">Green Light</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
-                                            <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span></div><div>
-                                            <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px">Red Light</p>
-                                </li>
-                                <li style="float:left; width: 50%; padding: 5px;">
-                                    <a href="javascript:void(0);" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                                        <div><span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
-                                            <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span></div>
-                                        <div><span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc;"></span>
-                                            <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;"></span></div></a>
-                                    <p class="text-center no-margin" style="font-size: 12px;">Yellow Light</p>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-
 
         </ul>
     </section>

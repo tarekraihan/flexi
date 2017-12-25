@@ -276,4 +276,115 @@ class Main extends CI_Controller {
             redirect(base_url().'login');
         }
     }
+
+    public function add_user()
+    {
+        if( $this->session->userdata('user_email')){
+            $this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
+            $this->form_validation->set_rules('email_address', 'Email Address', 'trim|required|valid_email');
+            $this->form_validation->set_rules('phone_no', 'Phone no', 'trim|required|min_length[10]|max_length[15]');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[15]');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Add User";
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/navigation');
+                $this->load->view('front_end/add_user');
+                $this->load->view('front_end/block/footer');
+
+            }else {
+                $username = $this->input->post('username');
+                $email_address = $this->input->post('email_address');
+                $phone_no = $this->input->post('phone_no');
+                $password = md5($this->input->post('password'));
+                $type = $this->input->post('type');
+                $ref = $this->session->userdata('user_id');
+
+                $power = 0;
+                if ($type == 'Reseller') {
+                    $power = 25;
+                } else if ($type == 'User') {
+                    $power = 0;
+                }
+
+
+                $date = date('Y-m-d H:i:s');
+
+                $insert_query = $this->db->query("INSERT INTO users (`username`, `password`, `email`, `phone`, `power`, `reseller_id`,`created`) VALUES ('{$username}', '{$password}','{$email_address}','{$phone_no}','{$power}','{$ref}','{$date}')");
+
+                if ($insert_query) {
+                    $this->session->set_flashdata('success_message', 'Add user Successfully');
+                    redirect(base_url() . 'main/add_user/');
+                } else {
+                    $this->session->set_flashdata('error_message', 'Failed to add user');
+                    redirect(base_url() . 'main/add_user/');
+                }
+            }
+
+        }else{
+            redirect(base_url().'login');
+        }
+    }
+
+    public function user_list()
+    {
+        if( $this->session->userdata('user_email')){
+            $query = $this->db->query( "SELECT users.*,admins.username as admin_name, users.username as username, u.username as user_admin FROM users LEFT JOIN admins ON admins.id = users.admin_id LEFT JOIN users as u ON u.id = users.reseller_id WHERE users.reseller_id = '{$this->session->userdata('user_id')}'");
+            $data['results'] = $query->result();
+            $data['title'] = "User List";
+            $this->load->view('front_end/block/header',$data);
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/user_list');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
+    }
+    public function add_balance()
+    {
+        if( $this->session->userdata('user_email')){
+            $this->form_validation->set_rules('balance', 'balance', 'trim|required');
+            if ($this->form_validation->run() == FALSE){
+                $data['id'] = $this->uri->segment(3, 0);
+                $data['title'] = "add balance";
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/navigation');
+                $this->load->view('front_end/add_balance');
+                $this->load->view('front_end/block/footer');
+
+            }else {
+                $balance = (float) $this->input->post('balance');
+                $user_id = $this->input->post('user_id');
+                $admin_id = $this->session->userdata('user_id');
+
+                $query = $this->db->query("SELECT current_balance FROM users WHERE id= '{$user_id}'");
+                $res = $query->row_array();
+                $user_current_balance = (float) $res['current_balance'];
+
+                $query1 = $this->db->query("SELECT current_balance FROM users WHERE id= '{$admin_id}'");
+                $res1 = $query1->row_array();
+                $admin_current_balance = (float) $res1['current_balance'];
+
+                $user_new_balance = $user_current_balance + $balance;
+                $admin_new_balance = $admin_current_balance - $balance;
+
+                $date = date('Y-m-d H:i:s');
+                $update_user_balance = $this->db->query("UPDATE users SET current_balance = '{$user_new_balance}' WHERE id= '{$user_id}'");
+                $update_admin_balance = $this->db->query("UPDATE users SET current_balance = '{$admin_new_balance}' WHERE id= '{$admin_id}'");
+                if ($update_user_balance && $update_admin_balance ) {
+                    $insert = $this->db->query("INSERT INTO `add_balance`(`add_to`, `add_from_user`, `amount`, `created`) VALUES ('{$user_id}','{$admin_id}','{$balance}','{$date}')");
+                }
+
+                if ( $insert ) {
+                    $this->session->set_flashdata('success_message', 'Add user balance Successfully');
+                    redirect(base_url() . 'main/add_balance/'.$user_id);
+                } else {
+                    $this->session->set_flashdata('error_message', 'Failed to add user balance');
+                    redirect(base_url() . 'main/add_user/'.$user_id);
+                }
+            }
+        }else{
+            redirect(base_url().'login');
+        }
+    }
 }

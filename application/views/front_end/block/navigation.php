@@ -2,11 +2,11 @@
 
 <header class="main-header">
 <!-- Logo -->
-<a href="<?php echo base_url();?>admin" class="logo">
+<a href="<?php echo base_url();?>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>A</b>LT</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Admin Panel</span>
+    <span class="logo-lg"><b>User Panel</span>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top">
@@ -15,8 +15,8 @@
     <span class="sr-only">Toggle navigation</span>
 </a>
 -->
-    <a href="<?php echo base_url();?>admin" class="logo" style="background-color: transparent;">
-        <span class="logo-lg">Tori Flexi</span>
+    <a href="<?php echo base_url();?>" class="logo" style="background-color: transparent;">
+        <span class="logo-lg">Noor Flexi</span>
     </a>
 <div class="navbar-custom-menu">
 <ul class="nav navbar-nav">
@@ -115,7 +115,19 @@
                     <li><a href="<?php echo base_url();?>main/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
-            <li class="treeview"><a href="#"><span>Reseller</span></a></li>
+
+            <li class="treeview">
+                <a href="#">
+                    <span>Reseller</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>main/add_user"><i class="fa fa-circle-o"></i>Add New User</a></li>
+                    <li><a href="<?php echo base_url();?>main/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
+                </ul>
+            </li>
             <li class="treeview"><a href="#"><span>Payment History</span></a></li>
             <li class="treeview"><a href="#"><span>Receive History</span></a></li>
             <li class="treeview">

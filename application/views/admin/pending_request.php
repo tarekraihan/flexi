@@ -31,11 +31,7 @@
                                                     <th>Number</th>
                                                     <th>Amount</th>
                                                     <th>Req. Time</th>
-                                                    <th>Status</th>
-                                                    <th>Recharge From</th>
-                                                    <th>TXR</th>
-                                                    <th>Comment</th>
-                                                    <th>Update Time</th>
+                                                    <th>Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -50,22 +46,8 @@
                                                         <td><?php echo $request->to_number .' ( '.$request->type.' )'; ?></td>
                                                         <td>TK <?php echo $request->amount; ?></td>
                                                         <td><?php echo ($request->request_date_time) ? date('d F Y h:i A', strtotime($request->request_date_time)) : '';?></td>
-                                                        <td>
-                                                            <?php
-                                                            if($request->status == 'Pending'){
-                                                                echo '<span class="info">'.$request->status.'</span>';
-                                                            }else if ($request->status == 'Send'){
-                                                                echo '<span class="success">'.$request->status.'</span>';
-                                                            }else{
-                                                                echo '<span class="error">'.$request->status.'</span>';
-                                                            }
-                                                            ?>
-                                                        </td>
 
-                                                        <td><?php echo ($request->from_number) ? $request->from_number . ' ( '. $request->admin_name.' )' : ''; ?></td>
-                                                        <td><?php echo $request->transaction_id; ?></td>
-                                                        <td><?php echo $request->comment; ?></td>
-                                                        <td><?php echo ($request->delivery_date_time) ? date('d F Y h:i A', strtotime($request->delivery_date_time)) : '';?></td>
+                                                        <td><a href="<?php echo base_url();?>admin/action/<?php echo $request->id;?>" class="btn btn-success right10">Success Action</a><a href="<?php echo base_url();?>admin/refund/<?php echo $request->id;?>" class="btn btn-danger right10">Refund</a> </td>
                                                     </tr>
                                                     <?php
                                                     $i++;

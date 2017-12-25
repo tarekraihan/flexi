@@ -49,7 +49,7 @@
                                                         <td>TK <?php echo $row->current_balance; ?></td>
                                                         <td><?php echo $row->power; ?></td>
                                                         <td><?php echo $created_by; ?></td>
-                                                        <td><a href="<?php echo base_url();?>admin/add_balance/<?php echo $row->id;?>" class="btn btn-primary">Add Balance</a>  </td>
+                                                        <td><a href="<?php echo base_url();?>main/add_balance/<?php echo $row->id;?>" class="btn btn-primary">Add Balance</a>  </td>
 
                                                     </tr>
                                                     <?php

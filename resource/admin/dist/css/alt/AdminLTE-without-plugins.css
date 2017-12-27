@@ -269,6 +269,7 @@ a:focus {
 .main-header .navbar .nav > li.user > a > .glyphicon,
 .main-header .navbar .nav > li.user > a > .ion {
   margin-right: 5px;
+  color:green;
 }
 .main-header .navbar .nav > li > a > .label {
   position: absolute;
@@ -3087,6 +3088,8 @@ table.text-center th {
 .treeview-menu > li > a > .glyphicon,
 .treeview-menu > li > a > .ion {
   width: 20px;
+  color:green !important;
+  font-weight: bolder;
 }
 .treeview-menu > li > a > .pull-right-container > .fa-angle-left,
 .treeview-menu > li > a > .pull-right-container > .fa-angle-down,

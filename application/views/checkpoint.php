@@ -3,7 +3,7 @@
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="main">Tori Flexi biling</a>
+                <a class="navbar-brand" href="main">Noor Flexi biling</a>
             </div>
         </div>
     </div>

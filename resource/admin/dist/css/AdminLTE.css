@@ -3235,6 +3235,8 @@ table.text-center th {
 .treeview-menu > li > a > .glyphicon,
 .treeview-menu > li > a > .ion {
   width: 20px;
+  color: green;
+  font-weight: bolder;
 }
 .treeview-menu > li > a > .pull-right-container > .fa-angle-left,
 .treeview-menu > li > a > .pull-right-container > .fa-angle-down,

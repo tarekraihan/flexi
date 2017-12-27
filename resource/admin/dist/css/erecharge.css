@@ -197,7 +197,7 @@ ul.ienav{
 }
 
 .main {padding-left:230px;}
-.sidebar {width:230px;float:left;}
+.sidebar {width:230px;float:left; font-weight: 600;}
 .mypage{padding:20px;}
 
 

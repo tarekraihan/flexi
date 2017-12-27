@@ -47,3 +47,35 @@ $('#bkash_form').validate({
         $(element).closest('.form-group').removeClass('has-error');
     }
 });
+
+$(document).ready(function (){
+  $('#operator').on('change',function () {
+      var operator_id = $('#operator option:selected').val();
+      // console.log(operator_id);
+      $.ajax
+      ({
+          type: "POST",
+          url: "ajax_get_package",
+          data: {operator_id:operator_id},
+          success: function(response)
+          {
+              $("#package").html(response);
+          }
+      });
+  })
+
+  $('#package').on('change',function () {
+      var package_id = $('#package option:selected').val();
+      // console.log(operator_id);
+      $.ajax
+      ({
+          type: "POST",
+          url: "ajax_get_package_price",
+          data: {package_id:package_id},
+          success: function(response)
+          {
+              $("#amount").val(response);
+          }
+      });
+  })
+})

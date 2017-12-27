@@ -112,10 +112,54 @@ class Main extends CI_Controller {
 	public function package_recharge()
 	{
         if( $this->session->userdata('user_email')){
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/navigation');
-            $this->load->view('front_end/package_recharge');
-            $this->load->view('front_end/block/footer');
+            $this->form_validation->set_rules('number', 'Number', 'trim|required|min_length[10]|max_length[15]');
+            $this->form_validation->set_rules('amount', 'Amount', 'callback_check_available_balance');
+            $this->form_validation->set_rules('package', 'package', 'trim|required');
+            $this->form_validation->set_rules('type', 'Type', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $query = $this->db->query("Select package.*,operator.operator_name  From package INNER JOIN operator ON operator.id= package.operator_id");
+                $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Package Recharge'  AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC LIMIT 0,9");
+                $operators = $this->db->query("SELECT * FROM `operator`");
+                $data['rows'] = $query->result();
+                $data['requests'] = $request->result();
+                $data['operators'] = $operators->result();
+                $data['title'] = 'NoorFlexi : Package Recharge';
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/navigation');
+                $this->load->view('front_end/package_recharge');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $query = $this->db->query("Select current_balance From users where id= '{$this->session->userdata('user_id')}'");
+                $res = $query->row_array();
+                $current_balance = (float) $res['current_balance'];
+
+                $amount = (float) $this->input->post('amount');
+
+                $balance_after_deduct = $current_balance - $amount;
+                $number = $this->input->post('number');
+                $package = $this->input->post('package');
+                $operator = $this->input->post('operator');
+                $type = $this->input->post('type');
+                $date = date('Y-m-d H:i:s');
+
+                $update_query = $this->db->query("UPDATE users SET current_balance = '{$balance_after_deduct}' WHERE id= '{$this->session->userdata('user_id')}'");
+                if($update_query){
+                    $insert_query =  $this->db->query("INSERT INTO all_request (`request_type`, `to_number`, `amount`, `type`, `user_id`, `request_date_time`, `status`,  `package_id`, `created`, `balance_after_deduct`,`operator_id`) VALUES ('Package Recharge', '{$number}', '{$amount}','{$type}','{$this->session->userdata('user_id')}','{$date}','Pending', '{$package}','{$date}','{$balance_after_deduct}','{$operator}')");
+
+                    if($insert_query){
+                        $this->session->set_flashdata('success_message', 'Your package recharge successfully send.');
+                        redirect(base_url().'main/package_recharge');
+                    }else{
+                        $this->session->set_flashdata('error_message', 'Your package recharge is failed.');
+                        redirect(base_url().'main/package_recharge');
+                    }
+                }else{
+                    $this->session->set_flashdata('error_message', 'Your package recharge is failed.');
+                    redirect(base_url().'main/package_recharge');
+                }
+            }
         }else{
             redirect(base_url().'login');
         }
@@ -386,5 +430,23 @@ class Main extends CI_Controller {
         }else{
             redirect(base_url().'login');
         }
+    }
+
+    public function ajax_get_package(){
+	    $operator_id = $this->input->post('operator_id');
+        $packages = $this->db->query("SELECT * FROM `package` WHERE operator_id = '{$operator_id}'");
+        $data = $packages->result();
+        $html = '';
+        foreach ($data as $k){
+            $html .= '<option value="'.$k->id.'">'.$k->package_name.'</option>';
+        }
+        echo $html;
+    }
+    public function ajax_get_package_price(){
+	    $package_id = $this->input->post('package_id');
+        $packages = $this->db->query("SELECT * FROM `package` WHERE id = '{$package_id}'");
+        $data = $packages->row();
+
+        echo $data->price;
     }
 }

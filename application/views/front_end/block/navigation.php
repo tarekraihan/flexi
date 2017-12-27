@@ -23,9 +23,14 @@
 <!-- Messages: style can be found in dropdown.less-->
 
 <!-- User Account: style can be found in dropdown.less -->
+    <li style=""><a href="javascript:void(0)" class="white"> Balance: <b><?php
+                $query = $this->db->query("Select current_balance From users where id= '{$this->session->userdata('user_id')}'");
+                $row = $query->row_array();
+                echo number_format($row['current_balance'],2);
+                ?></b></a></li>
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('fullname'));?></span>
+        <span class="hidden-xs"><?php echo ucfirst($this->session->userdata('username'));?></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->

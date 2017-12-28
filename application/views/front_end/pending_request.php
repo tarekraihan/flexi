@@ -5,10 +5,10 @@ if(isset($_GET['id'])){
 
     if ($delete) {
         $this->session->set_flashdata('error_message', 'Record deleted successfully');
-        redirect(base_url().'main/all');
+        redirect(base_url().'main/pending_request');
     } else {
         $this->session->set_flashdata('error_message', 'Problem to delete the record.');
-        redirect(base_url().'main/all');
+        redirect(base_url().'main/pending_request');
     }
 }
 
@@ -17,7 +17,7 @@ if(isset($_GET['id'])){
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="ezttle"><span class="text">All History</span></div>
+        <div class="ezttle"><span class="text">Pending Request</span></div>
     </section>
 
     <!-- Main content -->
@@ -32,13 +32,13 @@ if(isset($_GET['id'])){
                             <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
 
-                                <div style="vertical-align:top;">
-                                    <p class="help-block form_error" style="font-size:15px; text-align: center;">
-                                        <?php
-                                        echo $this->session->flashdata('error_message');
-                                        ?>
-                                    </p>
-                                </div>
+                            <div style="vertical-align:top;">
+                                <p class="help-block form_error" style="font-size:15px; text-align: center;">
+                                    <?php
+                                    echo $this->session->flashdata('error_message');
+                                    ?>
+                                </p>
+                            </div>
                                 <div style="vertical-align:top;">
                                     <div style="margin:0px;padding:0px;background:#fff;">
                                         <table cellspacing="0" class="table10">

@@ -47,6 +47,35 @@ $('#bkash_form').validate({
         $(element).closest('.form-group').removeClass('has-error');
     }
 });
+$('#package_recharge_form').validate({
+    rules: {
+        number: {
+            minlength: 10,
+            maxlength: 15,
+            required: true,
+            number:true
+        },
+        amount: {
+            required: true,
+            number:true
+        },
+        operator: {
+            required: true
+        },
+        package: {
+            required: true
+        },
+        type: {
+            required: true
+        }
+    },
+    highlight: function(element) {
+        $(element).closest('.form-group').addClass('has-error');
+    },
+    unhighlight: function(element) {
+        $(element).closest('.form-group').removeClass('has-error');
+    }
+});
 
 $(document).ready(function (){
   $('#operator').on('change',function () {
@@ -78,4 +107,8 @@ $(document).ready(function (){
           }
       });
   })
+    setTimeout(function(){
+        $('.form_error').hide('slow');
+        }, 3000);
+
 })

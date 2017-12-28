@@ -103,9 +103,9 @@
                     <li><a href="<?php echo base_url();?>main/dbbl"><i class="fa fa-circle-o"></i> DBBL</a></li>
                 </ul>
             </li>
-            <li><a href="#"><span>International Flexi</span></a></li>
+<!--            <li><a href="#"><span>International Flexi</span></a></li>-->
             <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span> </a></li>
-            <li><a href="#"><span>Pending Request</span></a></li>
+            <li><a href="<?php echo base_url();?>main/pending_request"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">
                     <span>History</span>
@@ -118,6 +118,7 @@
                     <li><a href="<?php echo base_url();?>main/flexi_history"><i class="fa fa-circle-o"></i> Flexiload</a></li>
                     <li><a href="<?php echo base_url();?>main/bkash_history"><i class="fa fa-circle-o"></i> bKash</a></li>
                     <li><a href="<?php echo base_url();?>main/dbbl_history"><i class="fa fa-circle-o"></i> DBBL</a></li>
+                    <li><a href="<?php echo base_url();?>main/package_recharge_history"><i class="fa fa-circle-o"></i> Package Recharge</a></li>
                 </ul>
             </li>
 
@@ -133,7 +134,7 @@
                     <li><a href="<?php echo base_url();?>main/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
                 </ul>
             </li>
-            <li class="treeview"><a href="#"><span>Payment History</span></a></li>
+<!--            <li class="treeview"><a href="#"><span>Payment History</span></a></li>-->
             <li class="treeview"><a href="#"><span>Receive History</span></a></li>
             <li class="treeview">
                 <a href="#">
@@ -157,10 +158,10 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href=""><i class="fa fa-circle-o"></i> My Rates</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Add Balance</a></li>
+<!--                    <li><a href=""><i class="fa fa-circle-o"></i> Add Balance</a></li>-->
                     <li><a href=""><i class="fa fa-circle-o"></i> Access Logs</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Setup PIN</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Change Pin</a></li>
+<!--                    <li><a href=""><i class="fa fa-circle-o"></i> Setup PIN</a></li>-->
+<!--                    <li><a href=""><i class="fa fa-circle-o"></i> Change Pin</a></li>-->
                     <li><a href=""><i class="fa fa-circle-o"></i> Change Password</a></li>
                     <li><a href=""><i class="fa fa-circle-o"></i> Profile Update</a></li>
                 </ul>

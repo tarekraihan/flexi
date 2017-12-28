@@ -21,7 +21,11 @@
 <div class="navbar-custom-menu">
 <ul class="nav navbar-nav">
 <!-- Messages: style can be found in dropdown.less-->
-
+    <li style=""><a href="javascript:void(0)" class="white"> Balance: <b><?php
+                $query = $this->db->query("Select current_balance From admins where id= '{$this->session->userdata('admin_user_id')}'");
+                $row = $query->row_array();
+                echo number_format($row['current_balance'],2);
+                ?></b></a></li>
 <!-- User Account: style can be found in dropdown.less -->
     <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -32,7 +36,7 @@
             <li class="user-header">
                 <img src="<?php echo base_url();?>resource/admin/dist/img/userphoto.png" class="img-circle" alt="User Image">
                 <p>
-                    Full Namae - <?php echo $this->session->userdata('admin_username');?>
+                    Full Namae - <?php echo ucfirst($this->session->userdata('admin_username'));?>
                     <small>Balance: <b>
                             <?php
                             $query = $this->db->query("Select current_balance From admins where id= '{$this->session->userdata('admin_user_id')}'");
@@ -88,6 +92,18 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url();?>admin/add_user"><i class="fa fa-circle-o"></i>Add New User</a></li>
                     <li><a href="<?php echo base_url();?>admin/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <span>Package Recharge</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url();?>admin/add_package"><i class="fa fa-circle-o"></i>Add New Package</a></li>
+                    <li><a href="<?php echo base_url();?>admin/package_list"><i class="fa fa-circle-o"></i> Package Recharge List</a></li>
                 </ul>
             </li>
 

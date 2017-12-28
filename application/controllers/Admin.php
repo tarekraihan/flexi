@@ -225,6 +225,46 @@ class Admin extends CI_Controller {
             redirect(base_url().'admin_login');
         }
     }
+    public function add_package()
+    {
+        if( $this->session->userdata('admin_email')){
+            $this->form_validation->set_rules('operator', 'operator', 'trim|required');
+            $this->form_validation->set_rules('package', 'package', 'trim|required');
+            $this->form_validation->set_rules('amount', 'Price', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $operators = $this->db->query("SELECT * FROM `operator`");
+                $data['operators'] = $operators->result();
+                $data['title'] = 'NoorFlexi : add Package';
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/navigation');
+                $this->load->view('admin/add_package');
+                $this->load->view('admin/block/footer');
+
+            }else {
+                $operator = $this->input->post('operator');
+                $package = $this->input->post('package');
+                $amount = $this->input->post('amount');
+                $admin_username = $this->session->userdata('admin_username');
+
+
+                $date = date('Y-m-d H:i:s');
+
+                $insert_query = $this->db->query("INSERT INTO package (`operator_id`, `package_name`, `price`, `created_by`, `created`) VALUES ('{$operator}', '{$package}','{$amount}','{$admin_username}','{$date}')");
+
+                if ($insert_query) {
+                    $this->session->set_flashdata('success_message', 'Add Package Successfully');
+                    redirect(base_url() . 'admin/add_package/');
+                } else {
+                    $this->session->set_flashdata('error_message', 'Failed to add package');
+                    redirect(base_url() . 'admin/add_package/');
+                }
+            }
+
+        }else{
+            redirect(base_url().'admin_login');
+        }
+    }
     public function transaction_report()
     {
         if($this->session->userdata('admin_email')){
@@ -248,6 +288,20 @@ class Admin extends CI_Controller {
             $this->load->view('admin/block/header',$data);
             $this->load->view('admin/block/navigation');
             $this->load->view('admin/user_list');
+            $this->load->view('admin/block/footer');
+        }else{
+            redirect(base_url().'admin_login');
+        }
+    }
+    public function package_list()
+    {
+        if( $this->session->userdata('admin_email')){
+            $query = $this->db->query("Select package.*,operator.operator_name  From package INNER JOIN operator ON operator.id= package.operator_id ORDER BY id DESC");
+            $data['rows'] = $query->result();
+            $data['title'] = "Package List";
+            $this->load->view('admin/block/header',$data);
+            $this->load->view('admin/block/navigation');
+            $this->load->view('admin/package_list');
             $this->load->view('admin/block/footer');
         }else{
             redirect(base_url().'admin_login');

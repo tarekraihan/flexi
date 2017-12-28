@@ -320,6 +320,34 @@ class Main extends CI_Controller {
             redirect(base_url().'login');
         }
     }
+	public function package_recharge_history()
+	{
+	    if( $this->session->userdata('user_email')){
+	        $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Package Recharge' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : Package Recharge';
+            $this->load->view('front_end/block/header',$data);
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/package_recharge_history');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
+    }
+	public function pending_request()
+	{
+	    if( $this->session->userdata('user_email')){
+	        $request = $this->db->query("SELECT * FROM `all_request` WHERE status='Pending' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $data['requests'] = $request->result();
+            $data['title'] = 'NoorFlexi : Pending Request';
+            $this->load->view('front_end/block/header',$data);
+            $this->load->view('front_end/block/navigation');
+            $this->load->view('front_end/pending_request');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'login');
+        }
+    }
 
     public function add_user()
     {

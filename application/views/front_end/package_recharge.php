@@ -17,7 +17,7 @@
                         <div class="col-md-12 fleft">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-12" style="min-width:370px;margin-right:50px">
-                                    <form action="<?php echo base_url();?>main/package_recharge" role="form" class="inform well" style="width:350px;" method="post" accept-charset="utf-8">
+                                    <form action="<?php echo base_url();?>main/package_recharge" role="form" id="package_recharge_form" class="inform well" style="width:350px;" method="post" accept-charset="utf-8">
                                         <table style="width:100%;">
                                             <tbody><tr>
                                                 <td style="vertical-align:top;padding-right:20px;">
@@ -63,7 +63,7 @@
                                                         echo $this->session->flashdata('error_message');
                                                         ?>
                                                     </p>
-                                                    <p class="help-block" style="font-size:11px;color:green">
+                                                    <p class="help-block form_error" style="font-size:11px;color:green">
                                                         <?php
                                                         echo $this->session->flashdata('success_message');
 

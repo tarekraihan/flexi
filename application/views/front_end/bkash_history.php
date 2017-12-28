@@ -1,3 +1,18 @@
+<?php
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $delete = $this->db->query("DELETE FROM all_request WHERE id='{$id}'");
+
+    if ($delete) {
+        $this->session->set_flashdata('error_message', 'Record deleted successfully');
+        redirect(base_url().'main/bkash_history');
+    } else {
+        $this->session->set_flashdata('error_message', 'Problem to delete the record.');
+        redirect(base_url().'main/bkash_history');
+    }
+}
+
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -16,9 +31,12 @@
                         <div class="col-md-12 fleft">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-
                                     <div style="vertical-align:top;">
-
+                                        <p class="help-block form_error" style="font-size:15px; text-align: center;">
+                                            <?php
+                                            echo $this->session->flashdata('error_message');
+                                            ?>
+                                        </p>
                                     </div>
                                     <div style="vertical-align:top;">
                                         <div style="margin:0px;padding:0px;background:#fff;">
@@ -71,7 +89,7 @@
                                                         <td>
                                                             <?php
                                                             if($request->status == 'Pending'){
-                                                                echo '<a href="">delete</a>';
+                                                                echo '<a href="?id='.$request->id.'" onclick="return confirm(\'Are you really want to delete this item\')" >Delete</a>';
                                                             }else if ($request->status == 'Send'){
                                                                 echo '<span class="success">'.$request->status.'</span>';
                                                             }else{

@@ -354,4 +354,58 @@ class Admin extends CI_Controller {
             redirect(base_url().'admin_login');
         }
     }
+
+    public function change_password()
+    {
+        if( $this->session->userdata('admin_email')){
+
+            $this->form_validation->set_rules('current_password', 'Current Password', 'trim|required');
+            $this->form_validation->set_rules('new_password', 'New Password', 'trim|required|min_length[6]');
+            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|matches[new_password]');
+
+            if ($this->form_validation->run() == FALSE){
+
+                $data['title'] = "Change Password";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/navigation');
+                $this->load->view('admin/change_password');
+                $this->load->view('admin/block/footer');
+
+            }else{
+                $current_password =  md5($this->input->post('current_password'));
+                $new_password =  md5($this->input->post('new_password'));
+                $user_name =  $this->session->userdata('admin_username');
+                $admin_id =  $this->input->post('admin_id');
+                if($current_password == $new_password){
+                    $this->session->set_flashdata('error_message', 'Current Password is same as new password.');
+                    redirect(base_url().'admin/change_password/');
+                }
+
+                $sql = "Select * From admins where username= '{$user_name}' AND password = '{$current_password}' Limit 1";
+                $query = $this->db->query($sql);
+                $data = $query->row();
+
+                if(!empty($data)){
+
+                    $sql1 = "UPDATE `admins` SET `password`='{$new_password}' WHERE `id` = '{$admin_id}'";
+
+                    $query = $this->db->query($sql1);
+
+                    if($query){
+                        $this->session->set_flashdata('success_message', 'Password change Successfully');
+                        redirect(base_url().'admin/change_password/');
+                    }else{
+                        $this->session->set_flashdata('error_message', 'Password not change. Please try again.');
+                        redirect(base_url().'admin/change_password/');
+                    }
+                }else{
+                    $this->session->set_flashdata('error_message', 'Current Password is Wrong.');
+                    redirect(base_url().'admin/change_password/');
+                }
+
+            }
+        }else{
+            redirect(base_url().'admin_login');
+        }
+    }
 }

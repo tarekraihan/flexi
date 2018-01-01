@@ -477,4 +477,58 @@ class Main extends CI_Controller {
 
         echo $data->price;
     }
+
+    public function change_password()
+    {
+        if( $this->session->userdata('user_email')){
+
+            $this->form_validation->set_rules('current_password', 'Current Password', 'trim|required');
+            $this->form_validation->set_rules('new_password', 'New Password', 'trim|required|min_length[6]');
+            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|matches[new_password]');
+
+            if ($this->form_validation->run() == FALSE){
+
+                $data['title'] = "Change Password";
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/navigation');
+                $this->load->view('front_end/change_password');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $current_password =  md5($this->input->post('current_password'));
+                $new_password =  md5($this->input->post('new_password'));
+                $user_name =  $this->session->userdata('username');
+                $admin_id =  $this->input->post('user_id');
+                if($current_password == $new_password){
+                    $this->session->set_flashdata('error_message', 'Current Password is same as new password.');
+                    redirect(base_url().'main/change_password/');
+                }
+
+                $sql = "Select * From users where username= '{$user_name}' AND password = '{$current_password}' Limit 1";
+                $query = $this->db->query($sql);
+                $data = $query->row();
+
+                if(!empty($data)){
+
+                    $sql1 = "UPDATE `users` SET `password`='{$new_password}' WHERE `id` = '{$admin_id}'";
+
+                    $query = $this->db->query($sql1);
+
+                    if($query){
+                        $this->session->set_flashdata('success_message', 'Password change Successfully');
+                        redirect(base_url().'main/change_password/');
+                    }else{
+                        $this->session->set_flashdata('error_message', 'Password not change. Please try again.');
+                        redirect(base_url().'main/change_password/');
+                    }
+                }else{
+                    $this->session->set_flashdata('error_message', 'Current Password is Wrong.');
+                    redirect(base_url().'main/change_password/');
+                }
+
+            }
+        }else{
+            redirect(base_url().'login');
+        }
+    }
 }

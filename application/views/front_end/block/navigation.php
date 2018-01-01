@@ -64,7 +64,7 @@
         <!-- Menu Footer-->
         <li class="user-footer">
             <div class="pull-left">
-                <a href="main/profile" class="btn btn-default btn-flat">Profile</a>
+                <a href="<?php echo base_url();?>main/change_password/" class="btn btn-default btn-flat">Change Password</a>
             </div>
             <div class="pull-right">
                 <a href="<?php echo base_url();?>login/logout" class="btn btn-default btn-flat">Logout</a>
@@ -157,13 +157,13 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> My Rates</a></li>
+<!--                    <li><a href=""><i class="fa fa-circle-o"></i> My Rates</a></li>-->
 <!--                    <li><a href=""><i class="fa fa-circle-o"></i> Add Balance</a></li>-->
                     <li><a href=""><i class="fa fa-circle-o"></i> Access Logs</a></li>
 <!--                    <li><a href=""><i class="fa fa-circle-o"></i> Setup PIN</a></li>-->
 <!--                    <li><a href=""><i class="fa fa-circle-o"></i> Change Pin</a></li>-->
-                    <li><a href=""><i class="fa fa-circle-o"></i> Change Password</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> Profile Update</a></li>
+                    <li><a href="<?php echo base_url();?>main/change_password/"><i class="fa fa-circle-o"></i> Change Password</a></li>
+<!--                    <li><a href=""><i class="fa fa-circle-o"></i> Profile Update</a></li>-->
                 </ul>
             </li>
 

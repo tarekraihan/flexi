@@ -109,6 +109,6 @@ $(document).ready(function (){
   })
     setTimeout(function(){
         $('.form_error').hide('slow');
-        }, 3000);
+        }, 5000);
 
 })

@@ -16,8 +16,8 @@
                     <div class="row" style="margin-top:5px;">
                         <div class="col-xs-12 fleft">
                             <div class="row">
-                                <div class="col-xs-12" style="min-width:370px;margin-right:50px">
-                                    <form action="<?php echo base_url()?>main/bkash" role="form"  id="bkash_form"class="inform well" style="width:350px;" method="post" accept-charset="utf-8">
+                                <div class="col-xs-6 col-md-6" style="min-width:370px;margin-right:50px">
+                                    <form action="<?php echo base_url()?>main/bkash" role="form"  id="bkash_form" class="inform well" style="width:350px;" method="post" accept-charset="utf-8">
                                         <table style="width:100%;">
                                             <tbody><tr>
                                                 <td style="vertical-align:top;padding-right:20px;">
@@ -56,7 +56,7 @@
                                             </tbody></table>
                                     </form>
                                 </div>
-                                <div class="col-xs-6" style="padding-right:20px;">
+                                <div class="col-xs-6 col-md-6" style="padding-right:20px;">
                                     <p class="help-block">Last 10 Requests</p>
                                     <div style="margin:0px;padding:0px;background:#fff;">
                                         <table cellspacing="0" class="table10">

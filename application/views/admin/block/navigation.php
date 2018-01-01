@@ -52,7 +52,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
                 <div class="pull-left">
-                    <a href="admin/profile" class="btn btn-default btn-flat">Profile</a>
+                    <a href="admin/change_password" class="btn btn-default btn-flat">Change Password</a>
                 </div>
                 <div class="pull-right">
                     <a href="<?php echo base_url();?>admin_login/logout" class="btn btn-default btn-flat">Logout</a>

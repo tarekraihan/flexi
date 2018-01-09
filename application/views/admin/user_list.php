@@ -1,3 +1,16 @@
+<?php
+if(isset($_GET['user_id'])){
+
+    $user_id = $_GET['user_id'];
+    $res = $this->db->query("DELETE FROM users
+WHERE id =  {$user_id}");
+    if($res){
+        $_SESSION['success_msg'] = '<div class="alert alert-warning text-center form_error">User deleted.</div>';
+        redirect(base_url().'admin/user_list/');
+    }
+}
+
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -17,8 +30,13 @@
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
 
-                                    <div style="vertical-align:top;">
-
+                                    <div stye="vertical-align:top;">
+                                        <?php
+                                            if(isset( $_SESSION['success_msg'])){
+                                                echo  $_SESSION['success_msg'];
+                                            }
+                                            unset( $_SESSION['success_msg']);
+                                        ?>
                                     </div>
                                     <div style="vertical-align:top;">
                                         <div style="margin:0px;padding:0px;background:#fff;">
@@ -49,7 +67,7 @@
                                                         <td>TK <?php echo $row->current_balance; ?></td>
                                                         <td><?php echo $row->power; ?></td>
                                                         <td><?php echo $created_by; ?></td>
-                                                        <td><a href="<?php echo base_url();?>admin/add_balance/<?php echo $row->id;?>" class="btn btn-primary">Add Balance</a>  </td>
+                                                        <td><a href="<?php echo base_url();?>admin/add_balance/<?php echo $row->id;?>" class="btn btn-primary">Add Balance</a><a href="?user_id=<?php echo $row->id?>" class="btn btn-danger">Delete</a>  </td>
 
                                                     </tr>
                                                     <?php

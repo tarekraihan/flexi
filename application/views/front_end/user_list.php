@@ -66,7 +66,7 @@ if(isset($_GET['user_id'])){
                                                         <td>TK <?php echo $row->current_balance; ?></td>
                                                         <td><?php echo $row->power; ?></td>
                                                         <td><?php echo $created_by; ?></td>
-                                                        <td><a href="<?php echo base_url();?>main/add_balance/<?php echo $row->id;?>" class="btn btn-primary ">Add Balance</a><a href="?user_id=<?php echo $row->id?>" class="btn btn-danger"  onclick="return confirm('Do you really want to delete this user?')" style="margin: 5px 15px;">Delete</a>  </td>
+                                                        <td><a href="<?php echo base_url();?>main/add_balance/<?php echo $row->id;?>" class="btn btn-primary ">Add Balance</a><a href="?user_id=<?php echo $row->id?>" class="btn btn-danger"  onclick="return confirm('Warning !! Do you really want to delete this user???')" style="margin: 5px 15px;">Delete</a>  </td>
 
                                                     </tr>
                                                     <?php

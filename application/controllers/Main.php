@@ -267,7 +267,17 @@ class Main extends CI_Controller {
 	public function all()
 	{
         if( $this->session->userdata('user_email')){
-            $request = $this->db->query("SELECT * FROM `all_request` WHERE user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+            $request = $this->db->query($sql);
+
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : All';
             $this->load->view('front_end/block/header',$data);
@@ -281,7 +291,16 @@ class Main extends CI_Controller {
 	public function bkash_history()
 	{
 	    if( $this->session->userdata('user_email')){
-            $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='bkash' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.request_type='bkash' AND all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+            $request = $this->db->query($sql);
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : Bkash';
             $this->load->view('front_end/block/header',$data);
@@ -295,7 +314,16 @@ class Main extends CI_Controller {
 	public function dbbl_history()
 	{
 	    if( $this->session->userdata('user_email')){
-            $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='dbbl' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.request_type='dbbl' AND all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+            $request = $this->db->query($sql);
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : DBBL';
             $this->load->view('front_end/block/header',$data);
@@ -309,7 +337,18 @@ class Main extends CI_Controller {
 	public function flexi_history()
 	{
 	    if( $this->session->userdata('user_email')){
-	        $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Mobile Recharge' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.request_type='Mobile Recharge' AND all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+            $request = $this->db->query($sql);
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : DBBL';
             $this->load->view('front_end/block/header',$data);
@@ -323,7 +362,17 @@ class Main extends CI_Controller {
 	public function package_recharge_history()
 	{
 	    if( $this->session->userdata('user_email')){
-	        $request = $this->db->query("SELECT * FROM `all_request` WHERE request_type ='Package Recharge' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.request_type='Package Recharge' AND all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+            $request = $this->db->query($sql);
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : Package Recharge';
             $this->load->view('front_end/block/header',$data);
@@ -337,7 +386,17 @@ class Main extends CI_Controller {
 	public function pending_request()
 	{
 	    if( $this->session->userdata('user_email')){
-	        $request = $this->db->query("SELECT * FROM `all_request` WHERE status='Pending' AND user_id = '{$this->session->userdata('user_id')}' ORDER BY id DESC");
+
+            $user_ids = $this->session->userdata('user_id');
+            if($this->session->userdata('power') > 0 ){
+                $users = $this->db->query("SELECT id FROM `users` WHERE reseller_id ='{$this->session->userdata('user_id')}'");
+                $users = $users->result();
+                foreach ($users as $user){
+                    $user_ids .= ','.$user->id;
+                }
+            }
+            $sql = "SELECT all_request.*,users.username FROM `all_request` INNER JOIN  users on users.id = all_request.user_id WHERE all_request.status='Pending' AND all_request.user_id IN ({$user_ids}) ORDER BY id DESC";
+	        $request = $this->db->query($sql);
             $data['requests'] = $request->result();
             $data['title'] = 'NoorFlexi : Pending Request';
             $this->load->view('front_end/block/header',$data);
@@ -351,7 +410,7 @@ class Main extends CI_Controller {
 
     public function add_user()
     {
-        if( $this->session->userdata('user_email')){
+        if( $this->session->userdata('user_email') && $this->session->userdata('power') > 0){
             $this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
             $this->form_validation->set_rules('email_address', 'Email Address', 'trim|required|valid_email');
             $this->form_validation->set_rules('phone_no', 'Phone no', 'trim|required|min_length[10]|max_length[15]');
@@ -400,7 +459,7 @@ class Main extends CI_Controller {
 
     public function user_list()
     {
-        if( $this->session->userdata('user_email')){
+        if( $this->session->userdata('user_email') && $this->session->userdata('power') > 0){
             $query = $this->db->query( "SELECT users.*,admins.username as admin_name, users.username as username, u.username as user_admin FROM users LEFT JOIN admins ON admins.id = users.admin_id LEFT JOIN users as u ON u.id = users.reseller_id WHERE users.reseller_id = '{$this->session->userdata('user_id')}'");
             $data['results'] = $query->result();
             $data['title'] = "User List";
@@ -414,7 +473,7 @@ class Main extends CI_Controller {
     }
     public function add_balance()
     {
-        if( $this->session->userdata('user_email')){
+        if( $this->session->userdata('user_email') && $this->session->userdata('power') > 0){
             $this->form_validation->set_rules('balance', 'balance', 'trim|required');
             if ($this->form_validation->run() == FALSE){
                 $data['id'] = $this->uri->segment(3, 0);

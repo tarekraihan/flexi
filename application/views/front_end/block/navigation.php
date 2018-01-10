@@ -105,6 +105,7 @@
             </li>
 <!--            <li><a href="#"><span>International Flexi</span></a></li>-->
             <li><a href="<?php echo base_url();?>main/package_recharge"><span>Package Recharge</span> </a></li>
+
             <li><a href="<?php echo base_url();?>main/pending_request"><span>Pending Request</span></a></li>
             <li class="treeview">
                 <a href="#">
@@ -121,19 +122,20 @@
                     <li><a href="<?php echo base_url();?>main/package_recharge_history"><i class="fa fa-circle-o"></i> Package Recharge</a></li>
                 </ul>
             </li>
-
-            <li class="treeview">
-                <a href="#">
-                    <span>Reseller</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url();?>main/add_user"><i class="fa fa-circle-o"></i>Add New User</a></li>
-                    <li><a href="<?php echo base_url();?>main/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
-                </ul>
-            </li>
+            <?php if($this->session->userdata('power') > 0 ){ ?>
+                <li class="treeview">
+                    <a href="#">
+                        <span>Reseller</span>
+                        <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo base_url();?>main/add_user"><i class="fa fa-circle-o"></i>Add New User</a></li>
+                        <li><a href="<?php echo base_url();?>main/user_list"><i class="fa fa-circle-o"></i> User List</a></li>
+                    </ul>
+                </li>
+            <?php } ?>
 <!--            <li class="treeview"><a href="#"><span>Payment History</span></a></li>-->
             <li class="treeview"><a href="#"><span>Receive History</span></a></li>
             <li class="treeview">

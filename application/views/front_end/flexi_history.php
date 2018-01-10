@@ -69,7 +69,7 @@ if(isset($_GET['id'])){
                                                         <td><?php echo $request->request_type; ?></td>
                                                         <td>TK <?php echo $request->amount; ?></td>
                                                         <td>TK <?php echo $request->amount; ?></td>
-                                                        <td><?php echo $this->session->userdata('username'); ?></td>
+                                                        <td><?php echo $request->username; ?></td>
                                                         <td><?php echo ($request->request_date_time) ? date('d F Y h:i A', strtotime($request->request_date_time)) : '';?></td>
                                                         <td><?php echo ($request->delivery_date_time) ? date('d F Y h:i A', strtotime($request->delivery_date_time)) : '';?></td>
                                                         <td><?php echo $request->transaction_id; ?></td>
